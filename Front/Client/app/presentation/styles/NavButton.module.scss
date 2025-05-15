@@ -1,0 +1,24 @@
+.navButton {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  cursor: pointer;
+
+  &.active {
+    background-color: #000f00;
+    color: #ffffff;
+  }
+
+  &.inactive {
+    background-color: transparent;
+    color: #4b5563;
+  }
+}
+
+@media (max-width: 640px) {
+  .navButton {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+  }
+}

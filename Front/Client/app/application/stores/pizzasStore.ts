@@ -1,0 +1,31 @@
+import { IPizzassStore } from "@/app/core/interfaces/store/pizzas.store";
+import { create } from "zustand";
+
+export const pizzasStore = create<IPizzassStore>((set) => ({
+  pizzas: [],
+  pizza: null,
+  popularPizzas: [],
+  newPizzas: [],
+  pizzasPage: [],
+  searchResults: [],
+  loading: false,
+  popupOpen: false,
+  currentPage: 1,
+  totalPages: 0,
+  totalItems: 0,
+  pageSize: 10,
+  error: "",
+  setPizzas: (pizzas) => set({ pizzas }),
+  setPizza: (pizza) => set({ pizza }),
+  setPopularPizzas: (pizzas) => set({ popularPizzas: pizzas }),
+  setNewPizzas: (pizzas) => set({ newPizzas: pizzas }),
+  setPizzasPage: (pizzas) => set({ pizzasPage: pizzas }),
+  setSearchResults: (pizzas) => set({ searchResults: pizzas }),
+  setLoading: (loading) => set({ loading }),
+  setPopupOpen: (open) => set({ popupOpen: open }),
+  setCurrentPage: (page) => set({ currentPage: page }),
+  setTotalPages: (pages) => set({ totalPages: pages }),
+  setTotalItems: (items) => set({ totalItems: items }),
+  setPageSize: (size) => set({ pageSize: size }),
+  setError: (error) => set({ error }),
+}));

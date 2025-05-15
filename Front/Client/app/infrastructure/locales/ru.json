@@ -1,0 +1,265 @@
+{
+  "loading": "Загрузка...",
+  "Home": {
+    "welcome": "Добро пожаловать!",
+    "description": "Откройте для себя лучшие пиццы прямо сейчас.",
+    "goToMenu": "Перейти в меню"
+  },
+  "Benefits": {
+    "fastDelivery": {
+      "title": "Быстрая доставка",
+      "description": "Доставляем за 30 минут или пицца бесплатно"
+    },
+    "freshIngredients": {
+      "title": "Свежие ингредиенты",
+      "description": "Используем только качественные продукты"
+    },
+    "open247": {
+      "title": "Работаем 24/7",
+      "description": "Заказывайте в любое время"
+    }
+  },
+  "Review": {
+    "notAuthorized": "Вы не вошли в систему",
+    "rating": "Рейтинг",
+    "reviews": "Отзывы",
+    "noReviews": "Нет отзывов",
+    "typeReview": "Введите текст...",
+    "rateThisBook": "Оцените эту книгу",
+    "addReview": "Добавить отзыв",
+    "reviewAdded": "Отзыв добавлен",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "reviewUpdated": "Отзыв обновлен",
+    "reviewDeleted": "Отзыв удалён",
+    "shareYourThoughts": "Поделитесь своим мнением об этой пицце",
+    "submitReview": "Отправить отзыв"
+  },
+  "Pizza": {
+    "notFound": "Пиццы не найдены в этой категории",
+    "description": "Описание",
+    "ingredients": "Ингредиенты",
+    "prices": "Цены",
+    "small": "Маленькая",
+    "medium": "Средняя",
+    "large": "Большая",
+    "checkThisPizza": "Посмотрите эту пиццу",
+    "pizzaName": "Название пиццы",
+    "price": "Цена",
+    "goToPizzaFromLink": "Перейдите по ссылке, чтобы увидеть пиццу",
+    "linkCopied": "Ссылка скопирована",
+    "addToBasket": "Добавить в корзину",
+    "addToFavorite": "Добавить в избранное",
+    "alreadyInBasket": "Уже в корзине",
+    "alreadyInFavorite": "Удалить из избранного",
+    "chooseSize": "Выберите размер"
+  },
+  "Category": {
+    "Classic": "Классическая",
+    "Meat": "Мясная",
+    "Vegetarian": "Вегетарианская",
+    "Seafood": "Морская",
+    "Spicy": "Острая",
+    "notFound": "Пиццы не найдены в этой категории"
+  },
+  "Carousel": {
+    "freshPizza": {
+      "title": "Свежая пицца",
+      "description": "Готовим из лучших ингредиентов",
+      "buttonText": "Заказать сейчас"
+    },
+    "specialOffers": {
+      "title": "Специальные предложения",
+      "description": "Скидки до 30% на все меню",
+      "buttonText": "Узнать больше"
+    },
+    "fastDelivery": {
+      "title": "Быстрая доставка",
+      "description": "Доставим за 30 минут или пицца бесплатно",
+      "buttonText": "Заказать доставку"
+    }
+  },
+  "Search": {
+    "title": "Найди свою идеальную пиццу 🍕",
+    "subtitle": "Ищи среди наших вкуснейших предложений и выбирай любимую.",
+    "searchPlaceholder": "Введите название пиццы...",
+    "searchButton": "Поиск",
+    "suggestions": "Вот ваши предложения по пицце",
+    "loadingResults": "Ищем лучшие пиццы...",
+    "noResults": "Пиццы не найдены. Попробуйте другое название!",
+    "topRated": "Лучший выбор",
+    "ingredients": "Ингредиенты",
+    "size": "размер",
+    "addToCart": "В корзину",
+    "outOfStock": "Нет в наличии"
+  },
+  "Navbar": {
+    "home": "Главная",
+    "menu": "Меню",
+    "contacts": "Контакты",
+    "login": "Войти",
+    "register": "Регистрация",
+    "profile": "Профиль",
+    "logout": "Выйти",
+    "notAuthorized": "Вы не авторизованы",
+    "favorites": "Избранное",
+    "addresses": "Мои адреса",
+    "basket": "Корзина"
+  },
+  "Addresses": {
+    "myAddresses": "Мои адреса",
+    "addNewAddress": "Добавить новый адрес",
+    "defaultAddress": "Адрес по умолчанию",
+    "edit": "Редактировать",
+    "makeDefault": "Сделать основным",
+    "delete": "Удалить",
+    "editAddress": "Редактировать адрес",
+    "addAddress": "Добавить новый адрес",
+    "street": "Улица",
+    "city": "Город",
+    "state": "Регион/Область",
+    "country": "Страна",
+    "postalCode": "Почтовый индекс",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "add": "Добавить",
+    "addressesNotFound": "На данный момент у вас нет сохранённых адресов"
+  },
+  "Checkout": {
+    "checkout": "Оформление заказа",
+    "deliveryAddress": "Адрес доставки",
+    "paymentMethod": "Способ оплаты",
+    "creditCard": "Банковская карта",
+    "creditCardDesc": "Оплата онлайн",
+    "cashOnDelivery": "Наличными при получении",
+    "cashOnDeliveryDesc": "Оплата курьеру",
+    "orderSummary": "Сводка заказа",
+    "subtotal": "Подытог",
+    "delivery": "Доставка",
+    "total": "Итого",
+    "placeOrder": "Оформить заказ"
+  },
+  "Orders": {
+    "myOrders": "Мои заказы",
+    "orderNumber": "Номер заказа",
+    "totalAmount": "Сумма",
+    "deliveryAddress": "Адрес доставки",
+    "items": "Товары"
+  },
+  "Favorites": {
+    "title": "Мои избранные",
+    "subtitle": "Ваши любимые пиццы в одном месте",
+    "emptyTitle": "Избранных пока нет",
+    "emptySubtitle": "Добавьте любимые пиццы, чтобы увидеть их здесь",
+    "addToCart": "Добавить в корзину",
+    "removedFromFavorites": "Удалено из избранного",
+    "errorRemoving": "Ошибка при удалении из избранного",
+    "addedToCart": "Добавлено в корзину",
+    "large": "Большая",
+    "medium": "Средняя",
+    "small": "Маленькая"
+  },
+  "Basket": {
+    "yourBasket": "Ваша корзина",
+    "emptyBasket": "Ваша корзина пуста",
+    "clearBasket": "Очистить корзину",
+    "orderSummary": "Сводка заказа",
+    "subtotal": "Промежуточный итог",
+    "shipping": "Доставка",
+    "free": "Бесплатно",
+    "total": "Итого",
+    "checkout": "Оформить заказ",
+    "addItemsToBasket": "Добавьте товары в корзину для оформления заказа",
+    "goToCatalog": "Перейти в каталог",
+    "freeShippingMessage": "Бесплатная доставка при заказе от 50 AZN",
+    "securePayment": "Безопасная оплата",
+    "pricePerItem": "за штуку",
+    "includingVAT": "С учетом НДС",
+    "checkoutAgreement": "Нажимая 'Оформить заказ', вы соглашаетесь с условиями",
+    "fastDelivery": "Быстрая доставка",
+    "deliveryTime": "1–2 рабочих дня",
+    "basketCleaned": "Корзина была очищена"
+  },
+  "Contacts": {
+    "title": "Свяжитесь с нами",
+    "description": "Мы будем рады услышать от вас. Свяжитесь с нами, используя контактную информацию ниже или заполните форму.",
+    "address": "Адрес",
+    "addressContent": "ул. Пиццы, 123, Город Еды, ГЕ 12345",
+    "phone": "Телефон",
+    "phoneContent": "+1 (555) 123-4567",
+    "email": "Email",
+    "emailContent": "contact@pizzashop.com",
+    "workingHours": "Часы работы",
+    "workingHoursContent": "Пн-Вс: 10:00 - 22:00",
+    "contactForm": "Отправить сообщение",
+    "name": "Ваше имя",
+    "namePlaceholder": "Введите ваше имя",
+    "emailPlaceholder": "Введите ваш email",
+    "message": "Сообщение",
+    "messagePlaceholder": "Введите ваше сообщение...",
+    "sendMessage": "Отправить"
+  },
+  "Menu": {
+    "menu": "Меню"
+  },
+  "Login": {
+    "Title": "Добро пожаловать!",
+    "Subtitle": "Введите данные для входа в аккаунт",
+    "Email": "Эл. почта",
+    "EmailPlaceholder": "example@mail.com",
+    "Password": "Пароль",
+    "PasswordPlaceholder": "••••••••",
+    "ForgotPassword": "Забыли пароль?",
+    "Login": "Войти",
+    "NoAccount": "Нет аккаунта?",
+    "Register": "Зарегистрируйтесь",
+    "Success": "Вы успешно вошли в систему",
+    "LogoutSuccess": "Вы вышли из системы"
+  },
+  "Register": {
+    "Title": "Регистрация",
+    "Subtitle": "Создайте аккаунт для начала работы",
+    "Username": "Имя пользователя",
+    "UsernamePlaceholder": "Введите имя пользователя",
+    "FirstName": "Имя",
+    "FirstNamePlaceholder": "Введите ваше имя",
+    "LastName": "Фамилия",
+    "LastNamePlaceholder": "Введите вашу фамилию",
+    "Email": "Электронная почта",
+    "EmailPlaceholder": "Введите вашу почту",
+    "Password": "Пароль",
+    "ConfirmPassword": "Подтвердите пароль",
+    "PasswordMismatch": "Пароли не совпадают",
+    "AgreeTo": "Я согласен с",
+    "Terms": "Условиями использования",
+    "And": "и",
+    "Privacy": "Политикой конфиденциальности",
+    "Register": "Зарегистрироваться",
+    "HaveAccount": "Уже есть аккаунт?",
+    "Login": "Войти",
+    "Success": "Регистрация успешно завершен",
+    "Validation": {
+      "UsernameRequired": "Имя пользователя обязательно",
+      "FirstNameRequired": "Имя обязательно",
+      "LastNameRequired": "Фамилия обязательна",
+      "EmailRequired": "Email обязателен",
+      "InvalidEmail": "Введите корректный email",
+      "PasswordRequired": "Пароль обязателен",
+      "PasswordTooShort": "Пароль должен содержать минимум 8 символов",
+      "ConfirmPasswordRequired": "Пожалуйста, подтвердите пароль",
+      "PasswordMismatch": "Пароли не совпадают",
+      "TermsRequired": "Вы должны согласиться с условиями"
+    }
+  },
+  "Profile": {
+    "ProfileInformation": "Информация о профиле",
+    "Username": "Имя пользователя",
+    "Email": "Электронная почта",
+    "AccountStatus": "Статус аккаунта",
+    "LastUpdated": "Последнее обновление",
+    "EditProfile": "Редактировать профиль",
+    "DeleteAccount": "Удалить аккаунт",
+    "Active": "Активен",
+    "Unknown": "Неизвестно"
+  }
+}

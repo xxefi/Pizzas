@@ -1,0 +1,52 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "pizzas": "Pizzas",
+    "users": "Users",
+    "orders": "Orders",
+    "settings": "Settings",
+    "copyright": "© 2024 Admin Panel"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "lastUpdated": "Last updated",
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "customers": "Customers",
+    "avgOrderValue": "Average Order Value",
+    "orderStatus": "Order Status",
+    "customerSegments": "Customer Segments",
+    "salesChart": "Sales Chart",
+    "status": {
+      "pending": "Pending",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "segments": {
+      "newCustomers": "New Customers",
+      "returningCustomers": "Returning Customers"
+    }
+  },
+  "pizzas": {
+    "title": "Pizzas",
+    "available": "available pizza",
+    "create": "New Pizza",
+    "searchPlaceholder": "Search pizza...",
+    "selectSize": "Select size",
+    "outOfStock": "Out of stock",
+    "inStock": "In stock",
+    "ingredients": "Ingredients",
+    "details": "Details",
+    "category": "Category",
+    "rating": "Rating",
+    "status": "Status",
+    "deleteConfirmation": "Are you sure you want to delete this pizza?",
+    "deleteWarning": "This action cannot be undone"
+  },
+  "common": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "close": "Close"
+  }
+}

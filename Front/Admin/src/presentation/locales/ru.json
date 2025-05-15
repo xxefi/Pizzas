@@ -1,0 +1,52 @@
+{
+  "sidebar": {
+    "dashboard": "Панель управления",
+    "pizzas": "Пиццы",
+    "users": "Пользователи",
+    "orders": "Заказы",
+    "settings": "Настройки",
+    "copyright": "© 2024 Панель администратора"
+  },
+  "dashboard": {
+    "title": "Панель управления",
+    "lastUpdated": "Последнее обновление",
+    "totalRevenue": "Общий доход",
+    "totalOrders": "Всего заказов",
+    "customers": "Клиенты",
+    "avgOrderValue": "Средний чек",
+    "orderStatus": "Статус заказов",
+    "customerSegments": "Сегменты клиентов",
+    "salesChart": "График продаж",
+    "status": {
+      "pending": "В обработке",
+      "completed": "Выполнено",
+      "cancelled": "Отменено"
+    },
+    "segments": {
+      "newCustomers": "Новые клиенты",
+      "returningCustomers": "Повторные клиенты"
+    }
+  },
+  "pizzas": {
+    "title": "Пиццы",
+    "available": "доступная пицца",
+    "create": "Новая пицца",
+    "searchPlaceholder": "Поиск пиццы...",
+    "selectSize": "Выберите размер",
+    "outOfStock": "Нет в наличии",
+    "inStock": "В наличии",
+    "ingredients": "Состав",
+    "details": "Подробности",
+    "category": "Категория",
+    "rating": "Рейтинг",
+    "status": "Статус",
+    "deleteConfirmation": "Вы уверены, что хотите удалить пиццу?",
+    "deleteWarning": "Это действие необратимо"
+  },
+  "common": {
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "cancel": "Отмена",
+    "close": "Закрыть"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+obj/
+bin/
+.vs/
+.idea/
+.next/
+appsettings.json
+appsettings.Development.json
+POS-план.txt

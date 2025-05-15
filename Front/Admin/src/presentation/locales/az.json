@@ -1,0 +1,52 @@
+{
+  "sidebar": {
+    "dashboard": "İdarə paneli",
+    "pizzas": "Pizzalar",
+    "users": "İstifadəçilər",
+    "orders": "Sifarişlər",
+    "settings": "Ayarlar",
+    "copyright": "© 2024 İdarə Paneli"
+  },
+  "dashboard": {
+    "title": "İdarəetmə paneli",
+    "lastUpdated": "Son yeniləmə",
+    "totalRevenue": "Ümumi gəlir",
+    "totalOrders": "Ümumi sifarişlər",
+    "customers": "Müştərilər",
+    "avgOrderValue": "Orta sifariş dəyəri",
+    "orderStatus": "Sifariş statusu",
+    "customerSegments": "Müştəri seqmentləri",
+    "salesChart": "Satış qrafiki",
+    "status": {
+      "pending": "Gözləyir",
+      "completed": "Tamamlandı",
+      "cancelled": "Ləğv edildi"
+    },
+    "segments": {
+      "newCustomers": "Yeni müştərilər",
+      "returningCustomers": "Təkrar gələn müştərilər"
+    }
+  },
+  "pizzas": {
+    "title": "Pizzalar",
+    "available": "mövcud pizza",
+    "create": "Yeni Pizza",
+    "searchPlaceholder": "Pizza axtar...",
+    "selectSize": "Ölçü seçin",
+    "outOfStock": "Stokda yoxdur",
+    "inStock": "Stokda var",
+    "ingredients": "Tərkibi",
+    "details": "Ətraflı məlumat",
+    "category": "Kateqoriya",
+    "rating": "Reytinq",
+    "status": "Status",
+    "deleteConfirmation": "Pizzanı silmək istədiyinizə əminsiniz?",
+    "deleteWarning": "Bu əməliyyat geri qaytarıla bilməz"
+  },
+  "common": {
+    "edit": "Redaktə et",
+    "delete": "Sil",
+    "cancel": "Ləğv et",
+    "close": "Bağla"
+  }
+}
