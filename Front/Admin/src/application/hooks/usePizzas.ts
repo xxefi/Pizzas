@@ -76,6 +76,16 @@ export const usePizzas = () => {
     ]
   );
 
+  const handlePageChange = useCallback(
+    async (newPage: number) => {
+      if (newPage >= 1 && newPage <= totalPages) {
+        setCurrentPage(newPage);
+        await fetchPizzasPage(newPage, pageSize);
+      }
+    },
+    [totalPages, pageSize, setCurrentPage, fetchPizzasPage]
+  );
+
   const getPizzaById = useCallback(
     async (id: string) => {
       setLoading(true);
@@ -157,7 +167,7 @@ export const usePizzas = () => {
       setError("");
       try {
         const results = await pizzasService.searchPizza(searchTerm);
-        setSearchResults(results);
+        setSearchResults(results || []);
       } catch (e) {
         handleError(e);
       } finally {
@@ -212,5 +222,6 @@ export const usePizzas = () => {
     updateExistingPizza,
     deleteExistingPizza,
     searchForPizzas,
+    handlePageChange,
   };
 };

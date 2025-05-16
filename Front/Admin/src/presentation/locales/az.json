@@ -1,4 +1,5 @@
 {
+  "loading": "Yüklənir...",
   "sidebar": {
     "dashboard": "İdarə paneli",
     "pizzas": "Pizzalar",
@@ -36,17 +37,42 @@
     "outOfStock": "Stokda yoxdur",
     "inStock": "Stokda var",
     "ingredients": "Tərkibi",
+    "ingredientsPlaceholder": "İnqrediyent əlavə edin...",
+    "ingredientsHelp": "Enter, vergül və ya boşluq düyməsini istifadə edərək inqrediyentlər əlavə edin",
     "details": "Ətraflı məlumat",
     "category": "Kateqoriya",
     "rating": "Reytinq",
     "status": "Status",
     "deleteConfirmation": "Pizzanı silmək istədiyinizə əminsiniz?",
-    "deleteWarning": "Bu əməliyyat geri qaytarıla bilməz"
+    "deleteWarning": "Bu əməliyyat geri qaytarıla bilməz",
+    "image": "Şəkil",
+    "imageUrl": "Şəkil URL",
+    "imageUrlHelp": "Pizzanın şəklinin URL-ni daxil edin",
+    "name": "Ad",
+    "nameHelp": "Pizzanın adını daxil edin",
+    "more": "daha",
+    "price": "Qiymət",
+    "pricing": "Qiymətlər",
+    "originalPrice": "Əsas qiymət",
+    "discountPrice": "Endirimli qiymət",
+    "topSeller": "Ən çox satılan",
+    "edit": "Pizzanı redaktə et",
+    "Meat": "Ət",
+    "Vegetarian": "Vegetarian",
+    "Seafood": "Dəniz məhsulları",
+    "Spicy": "Acı",
+    "Classic": "Klassik",
+    "Small": "Kiçik",
+    "Medium": "Orta",
+    "Large": "Böyük",
+    "menuItems": "Menyu elementləri",
+    "viewDetails": "Ətraflı bax"
   },
   "common": {
+    "actions": "Əməliyyatlar",
+    "save": "Yadda saxla",
     "edit": "Redaktə et",
     "delete": "Sil",
-    "cancel": "Ləğv et",
-    "close": "Bağla"
+    "cancel": "Ləğv et"
   }
 }

@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const locale = localStorage.getItem("lang");
-
 export const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   headers: {
     "Content-Type": "application/json",
-    "Accept-Language": locale,
+    "Accept-Language": localStorage.getItem("lang"),
   },
   withCredentials: true,
 });

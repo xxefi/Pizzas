@@ -1,4 +1,5 @@
 {
+  "loading": "Loading...",
   "sidebar": {
     "dashboard": "Dashboard",
     "pizzas": "Pizzas",
@@ -8,7 +9,7 @@
     "copyright": "© 2024 Admin Panel"
   },
   "dashboard": {
-    "title": "Dashboard",
+    "title": "Admin Dashboard",
     "lastUpdated": "Last updated",
     "totalRevenue": "Total Revenue",
     "totalOrders": "Total Orders",
@@ -29,24 +30,49 @@
   },
   "pizzas": {
     "title": "Pizzas",
-    "available": "available pizza",
+    "available": "available pizzas",
     "create": "New Pizza",
     "searchPlaceholder": "Search pizza...",
     "selectSize": "Select size",
     "outOfStock": "Out of stock",
     "inStock": "In stock",
     "ingredients": "Ingredients",
+    "ingredientsPlaceholder": "Add ingredient...",
+    "ingredientsHelp": "Add ingredients using Enter, comma, or space key",
     "details": "Details",
     "category": "Category",
     "rating": "Rating",
     "status": "Status",
-    "deleteConfirmation": "Are you sure you want to delete this pizza?",
-    "deleteWarning": "This action cannot be undone"
+    "deleteConfirmation": "Are you sure you want to delete the pizza?",
+    "deleteWarning": "This action cannot be undone",
+    "image": "Image",
+    "imageUrl": "Image URL",
+    "imageUrlHelp": "Enter the URL of the pizza image",
+    "name": "Name",
+    "nameHelp": "Enter the name of the pizza",
+    "more": "more",
+    "price": "Price",
+    "pricing": "Prices",
+    "originalPrice": "Original Price",
+    "discountPrice": "Discounted Price",
+    "topSeller": "Top Seller",
+    "edit": "Edit Pizza",
+    "Meat": "Meat",
+    "Vegetarian": "Vegetarian",
+    "Seafood": "Seafood",
+    "Spicy": "Spicy",
+    "Classic": "Classic",
+    "Small": "Small",
+    "Medium": "Medium",
+    "Large": "Large",
+    "menuItems": "Menu Items",
+    "viewDetails": "View Details"
   },
   "common": {
+    "actions": "Actions",
+    "save": "Save",
     "edit": "Edit",
     "delete": "Delete",
-    "cancel": "Cancel",
-    "close": "Close"
+    "cancel": "Cancel"
   }
 }

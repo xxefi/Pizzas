@@ -17,7 +17,7 @@ import {
 import { StatCard } from "../components/other/dashboard/StatCard";
 import { useDashboard } from "../../application/hooks/useDashboard";
 import { formatCurrency } from "../extentions/formatCurrency";
-import { Loader } from "rsuite";
+import LoaderComponent from "../components/widgets/LoadingComponent";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -25,8 +25,8 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <Loader content="Loading blya..." />
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <LoaderComponent />
       </div>
     );
   }

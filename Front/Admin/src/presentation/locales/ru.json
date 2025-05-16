@@ -1,11 +1,12 @@
 {
+  "loading": "Загрузка...",
   "sidebar": {
     "dashboard": "Панель управления",
     "pizzas": "Пиццы",
     "users": "Пользователи",
     "orders": "Заказы",
     "settings": "Настройки",
-    "copyright": "© 2024 Панель администратора"
+    "copyright": "© 2024 Панель управления"
   },
   "dashboard": {
     "title": "Панель управления",
@@ -13,40 +14,65 @@
     "totalRevenue": "Общий доход",
     "totalOrders": "Всего заказов",
     "customers": "Клиенты",
-    "avgOrderValue": "Средний чек",
+    "avgOrderValue": "Средняя стоимость заказа",
     "orderStatus": "Статус заказов",
     "customerSegments": "Сегменты клиентов",
     "salesChart": "График продаж",
     "status": {
-      "pending": "В обработке",
-      "completed": "Выполнено",
+      "pending": "В ожидании",
+      "completed": "Завершено",
       "cancelled": "Отменено"
     },
     "segments": {
       "newCustomers": "Новые клиенты",
-      "returningCustomers": "Повторные клиенты"
+      "returningCustomers": "Постоянные клиенты"
     }
   },
   "pizzas": {
     "title": "Пиццы",
-    "available": "доступная пицца",
+    "available": "доступные пиццы",
     "create": "Новая пицца",
     "searchPlaceholder": "Поиск пиццы...",
     "selectSize": "Выберите размер",
     "outOfStock": "Нет в наличии",
     "inStock": "В наличии",
-    "ingredients": "Состав",
+    "ingredients": "Ингредиенты",
+    "ingredientsPlaceholder": "Добавьте ингредиент...",
+    "ingredientsHelp": "Добавляйте ингредиенты с помощью Enter, запятой или пробела",
     "details": "Подробности",
     "category": "Категория",
     "rating": "Рейтинг",
     "status": "Статус",
     "deleteConfirmation": "Вы уверены, что хотите удалить пиццу?",
-    "deleteWarning": "Это действие необратимо"
+    "deleteWarning": "Это действие необратимо",
+    "image": "Изображение",
+    "imageUrl": "URL изображения",
+    "imageUrlHelp": "Введите URL изображения пиццы",
+    "name": "Название",
+    "nameHelp": "Введите название пиццы",
+    "more": "ещё",
+    "price": "Цена",
+    "pricing": "Цены",
+    "originalPrice": "Основная цена",
+    "discountPrice": "Цена со скидкой",
+    "topSeller": "Хит продаж",
+    "edit": "Редактировать пиццу",
+    "Meat": "Мясная",
+    "Vegetarian": "Вегетарианская",
+    "Seafood": "Морепродукты",
+    "Spicy": "Острая",
+    "Classic": "Классическая",
+    "Small": "Маленькая",
+    "Medium": "Средняя",
+    "Large": "Большая",
+    "menuItems": "Элементы меню",
+    "viewDetails": "Подробнее"
   },
   "common": {
+    "actions": "Действия",
+    "save": "Сохранить",
     "edit": "Редактировать",
     "delete": "Удалить",
-    "cancel": "Отмена",
-    "close": "Закрыть"
+    "cancel": "Отмена"
   }
 }
