@@ -216,6 +216,12 @@
     "Success": "Вы успешно вошли в систему",
     "LogoutSuccess": "Вы вышли из системы"
   },
+  "OTP": {
+    "otpVerifedSuccess": "Код подтверждён успешно",
+    "invalidOtp": "Неверный код подтверждения",
+    "otpResendSuccessfully": "Код подтверждения отправлен повторно",
+    "failedToResend": "Не удалось отправить код повторно"
+  },
   "Register": {
     "Title": "Регистрация",
     "Subtitle": "Создайте аккаунт для начала работы",
@@ -238,6 +244,13 @@
     "HaveAccount": "Уже есть аккаунт?",
     "Login": "Войти",
     "Success": "Регистрация успешно завершен",
+    "OTPCode": "Код подтверждения",
+    "OTPPlaceholder": "Введите код",
+    "EnterOTPMessage": "Введите код, отправленный на вашу почту",
+    "VerifyOTP": "Подтвердить код",
+    "NotReceivedCode": "Не получили код?",
+    "ResendCode": "Отправить код повторно",
+    "ResendCodeTimer": "Повторная отправка через {seconds} сек",
     "Validation": {
       "UsernameRequired": "Имя пользователя обязательно",
       "FirstNameRequired": "Имя обязательно",

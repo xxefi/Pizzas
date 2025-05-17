@@ -336,7 +336,7 @@ namespace Pizzas.Infrastructure.Migrations
 
                     b.HasIndex("PizzaId");
 
-                    b.HasIndex("UserId", "PizzaId")
+                    b.HasIndex("UserId")
                         .IsUnique();
 
                     b.ToTable("Favorites");
@@ -707,6 +707,9 @@ namespace Pizzas.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
+
+                    b.Property<bool>("Verified")
+                        .HasColumnType("boolean");
 
                     b.HasKey("Id");
 

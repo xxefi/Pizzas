@@ -36,7 +36,7 @@ public class FavoriteEntityConfiguration : IEntityTypeConfiguration<FavoriteEnti
             .HasForeignKey(f => f.PizzaId)
             .OnDelete(DeleteBehavior.Cascade);
         
-        builder.HasIndex(f => new { f.UserId, f.PizzaId })
+        builder.HasIndex(f => f.UserId)
             .IsUnique();
     }
 }

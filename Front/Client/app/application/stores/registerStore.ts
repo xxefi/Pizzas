@@ -14,6 +14,7 @@ export const registerStore = create<IRegisterStore>((set) => ({
   },
   loading: false,
   error: "",
+  sessionId: undefined,
   setFormData: (formValue: Partial<IFormData>) =>
     set((state) => ({
       formData: {
@@ -23,6 +24,7 @@ export const registerStore = create<IRegisterStore>((set) => ({
     })),
   setLoading: (loading) => set({ loading }),
   setError: (error) => set({ error }),
+  setSessionId: (id) => set({ sessionId: id }),
   resetForm: () =>
     set({
       formData: {

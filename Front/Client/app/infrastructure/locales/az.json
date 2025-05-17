@@ -219,6 +219,12 @@
     "Success": "Siz sistemə daxil oldunuz",
     "LogoutSuccess": "Siz sistemnən çıxdınız"
   },
+  "OTP": {
+    "otpVerifedSuccess": "OTP uğurla təsdiqləndi",
+    "invalidOtp": "OTP kodu yanlışdır",
+    "otpResendSuccessfully": "OTP yenidən göndərildi",
+    "failedToResend": "OTP yenidən göndərilə bilmədi"
+  },
   "Register": {
     "Title": "Qeydiyyat",
     "Subtitle": "İşə başlamaq üçün hesab yaradın",
@@ -241,6 +247,13 @@
     "HaveAccount": "Hesabınız varmı?",
     "Login": "Daxil ol",
     "Success": "Qeydiyyat uğurla tamamlandı",
+    "OTPCode": "Təsdiq kodu",
+    "OTPPlaceholder": "Kodu daxil edin",
+    "EnterOTPMessage": "E-poçt ünvanınıza göndərilən kodu daxil edin",
+    "VerifyOTP": "Kodu təsdiqlə",
+    "NotReceivedCode": "Kod almadınız?",
+    "ResendCode": "Kodu yenidən göndər",
+    "ResendCodeTimer": "{seconds} saniyə sonra yenidən göndərilə bilər",
     "Validation": {
       "UsernameRequired": "İstifadəçi adı tələb olunur",
       "FirstNameRequired": "Ad tələb olunur",

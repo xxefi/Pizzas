@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { authStore } from "@/app/application/stores/authStore";
 import { toast } from "sonner";
 import { authService } from "@/app/infrastructure/services/authService";
@@ -27,6 +27,8 @@ export const useAuth = () => {
     setEmail,
     setPassword,
   } = authStore();
+
+  const pathname = usePathname();
 
   const handleError = useHandleError(setError);
 
@@ -71,7 +73,17 @@ export const useAuth = () => {
         await authService.login(email, password);
         await fetchUserProfile();
         toast.success(t("Success"));
-        router.back();
+        setEmail("");
+        setPassword("");
+
+        const segments = pathname.split("/").filter(Boolean);
+        const pathAfterLocale = segments.slice(1).join("/");
+
+        if (pathAfterLocale.startsWith("register")) {
+          router.push("/");
+        } else {
+          router.back();
+        }
       } catch (error: unknown) {
         if (error instanceof Error) {
           setError(error.message);

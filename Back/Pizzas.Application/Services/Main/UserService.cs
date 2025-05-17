@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Pizzas.Common.Exceptions;
 using Pizzas.Common.Extentions;
 using Pizzas.Core.Abstractions.Repositories.Main;
+using Pizzas.Core.Abstractions.Services.Auth;
 using Pizzas.Core.Abstractions.Services.Main;
 using Pizzas.Core.Abstractions.UOW;
 using Pizzas.Core.Dtos.Auth;
@@ -23,17 +24,22 @@ public class UserService : IUserService
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IUserRepository _userRepository;
     private readonly IRoleService _roleService;
+    private readonly IOtpService _iotpService;
     private readonly IValidator<CreateUserDto> _createUserValidator;
     private readonly IValidator<UpdateUserDto> _updateUserValidator;
     private readonly IUnitOfWork _unitOfWork;
 
     public UserService(IMapper mapper, IHttpContextAccessor httpContextAccessor, IUserRepository userRepository,
-        IRoleService roleService,  IValidator<CreateUserDto> createUserValidator, IValidator<UpdateUserDto> updateUserValidator, IUnitOfWork unitOfWork)
+        IRoleService roleService,
+        IOtpService iotpService,
+        IValidator<CreateUserDto> createUserValidator, IValidator<UpdateUserDto> updateUserValidator,
+        IUnitOfWork unitOfWork)
     {
         _mapper = mapper;
         _httpContextAccessor = httpContextAccessor;
         _userRepository = userRepository;
         _roleService = roleService;
+        _iotpService = iotpService;
         _createUserValidator = createUserValidator;
         _updateUserValidator = updateUserValidator;
         _unitOfWork = unitOfWork;
@@ -123,8 +129,11 @@ public class UserService : IUserService
         return await _unitOfWork.StartTransactionAsync(async () =>
         {
             var user = _mapper.Map<UserEntity>(createUserDto);
+            user.Email = createUserDto.Email.ToLowerInvariant();
+            user.Username = createUserDto.Username.ToLowerInvariant();
             user.RoleId = role.Id;
             user.Password = HashPassword(createUserDto.Password);
+            user.Verified = false;
             
             await _userRepository.AddAsync(user);
             
@@ -145,6 +154,17 @@ public class UserService : IUserService
             
             return _mapper.Map<UserDto>(existingUser);
         });
+    }
+
+    public async Task<UserDto> ConfirmUserEmailAsync(string otp)
+    {
+        var userId = GetUserId();
+        var user = await _userRepository.GetByIdAsync(userId);
+
+        user.Verified = true;
+        await _userRepository.UpdateAsync([user]);
+
+        return _mapper.Map<UserDto>(user);
     }
 
     public async Task<UserDto?> GetUserByIdAsync(string id)

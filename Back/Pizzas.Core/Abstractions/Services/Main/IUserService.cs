@@ -16,5 +16,6 @@ public interface IUserService
     Task<UserCredentialsDto?> GetUserCredentialsByIdAsync(string id);
     Task<UserDto> CreateUserAsync(CreateUserDto createUserDto);
     Task<UserDto> UpdateUserAsync(string id, UpdateUserDto updateUserDto);
+    Task<UserDto> ConfirmUserEmailAsync(string otp);
     Task<UserDto?> GetUserByIdAsync(string id);
 }

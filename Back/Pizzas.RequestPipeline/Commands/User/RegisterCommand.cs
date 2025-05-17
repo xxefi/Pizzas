@@ -4,4 +4,4 @@ using Pizzas.Core.Dtos.Read;
 
 namespace Pizzas.RequestPipeline.Commands.User;
 
-public record RegisterCommand(CreateUserDto NewUser) : IRequest<UserDto>;
+public record RegisterCommand(CreateUserDto NewUser) : IRequest<string>;

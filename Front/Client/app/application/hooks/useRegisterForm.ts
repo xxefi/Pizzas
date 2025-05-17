@@ -16,9 +16,7 @@ export function useRegisterForm(
     const newErrors = registerValidator(formData, v);
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      await register();
-    }
+    if (Object.keys(newErrors).length === 0) await register();
   };
 
   return {

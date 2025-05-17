@@ -125,6 +125,15 @@ namespace Pizzas.Application.Resources.Errors {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string InvalidOrExpiredOtp {
+            get {
+                return ResourceManager.GetString("InvalidOrExpiredOtp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string NoBasketItemsFound {
             get {
                 return ResourceManager.GetString("NoBasketItemsFound", resourceCulture);
@@ -278,6 +287,15 @@ namespace Pizzas.Application.Resources.Errors {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string PleaseWaitBeforeRequesting {
+            get {
+                return ResourceManager.GetString("PleaseWaitBeforeRequesting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string ReviewNotFound {
             get {
                 return ResourceManager.GetString("ReviewNotFound", resourceCulture);
@@ -314,9 +332,27 @@ namespace Pizzas.Application.Resources.Errors {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string UserDoesNotExist {
             get {
                 return ResourceManager.GetString("UserDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string UsernameMustBeLowercase {
+            get {
+                return ResourceManager.GetString("UsernameMustBeLowercase", resourceCulture);
             }
         }
         

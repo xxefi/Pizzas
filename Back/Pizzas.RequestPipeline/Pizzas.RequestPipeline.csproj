@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0-preview.4.25258.110" />
       <PackageReference Include="MongoDB.Bson" Version="3.4.0" />
     </ItemGroup>
 

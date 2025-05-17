@@ -9,7 +9,7 @@ const { code: targetCurrency } = getCurrencyFromStorage();
 export const basketService = {
   getBasket: async (): Promise<IBasket> => {
     try {
-      const response = await batchService.execute(() =>
+      const response = await batchService.execute(
         basketRequests.getBasket(targetCurrency)
       );
       return response[0] || ({} as IBasket);

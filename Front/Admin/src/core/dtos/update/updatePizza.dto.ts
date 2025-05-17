@@ -4,6 +4,7 @@ import type { UpdatePizzaPriceDto } from "./updatePizzaPrice.dto";
 
 export interface UpdatePizzaDto {
   name?: string;
+  category?: string;
   description?: string;
   rating?: number;
   imageUrl?: string;

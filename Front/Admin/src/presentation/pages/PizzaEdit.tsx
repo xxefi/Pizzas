@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -19,26 +19,42 @@ import { motion } from "framer-motion";
 import { usePizzas } from "../../application/hooks/usePizzas";
 import type { UpdatePizzaDto } from "../../core/dtos";
 import { pizzaValidationModel } from "../../application/validators/pizzaValidation";
+import type { PizzaSize } from "../../core/types/pizza.type";
 
-interface PizzaFormValue extends Omit<UpdatePizzaDto, "ingredients"> {
+interface PriceFormValue {
+  size: PizzaSize;
+  originalPrice: number;
+  discountPrice: number;
+}
+
+interface PizzaFormValue {
+  name: string;
+  category: string;
+  description?: string;
+  rating?: number;
+  imageUrl?: string;
+  stock?: boolean;
+  top?: boolean;
+  size?: PizzaSize;
   ingredients: string[];
+  prices: PriceFormValue[];
 }
 
 const defaultFormValue: PizzaFormValue = {
   name: "",
   category: "",
+  description: "",
   imageUrl: "",
   top: false,
   rating: 0,
   stock: true,
   ingredients: [],
-  prices: {
-    Small: { original: 0 },
-    Medium: { original: 0 },
-    Large: { original: 0 },
-  },
+  prices: [
+    { size: "Small", originalPrice: 0, discountPrice: 0 },
+    { size: "Medium", originalPrice: 0, discountPrice: 0 },
+    { size: "Large", originalPrice: 0, discountPrice: 0 },
+  ],
 };
-
 const categories = [
   "Classic",
   "Vegetarian",
@@ -69,9 +85,12 @@ export default function PizzaEdit(): JSX.Element {
       setFormValue({
         ...pizza,
         ingredients: pizza.ingredients?.map((i) => i.name) || [],
+        prices: pizza.prices || defaultFormValue.prices,
       });
     }
   }, [pizza]);
+
+  console.log("prices in formValue:", formValue.prices);
 
   const handleSubmit = async () => {
     if (!formRef.current.check() || !id) return;
@@ -79,10 +98,8 @@ export default function PizzaEdit(): JSX.Element {
     try {
       const transformedData: UpdatePizzaDto = {
         ...formValue,
-        ingredients: formValue.ingredients.map((name) => ({
-          name,
-          available: true,
-        })),
+        ingredients: formValue.ingredients.map((name) => ({ name })),
+        // prices уже в нужном формате — массив объектов
       };
 
       await updateExistingPizza(id, transformedData);
@@ -191,30 +208,30 @@ export default function PizzaEdit(): JSX.Element {
 
             <Panel header={t("pizzas.prices")} bordered>
               <Stack spacing={16} direction="column">
-                {(["Small", "Medium", "Large"] as const).map((size) => (
-                  <Panel key={size} bordered>
+                {formValue.prices.map((price, index) => (
+                  <Panel key={price.size} bordered>
                     <h4 className="text-lg font-semibold mb-4">
-                      {t(`pizzas.${size}`)}
+                      {t(`pizzas.${price.size}`)}
                     </h4>
                     <Stack spacing={16}>
-                      <Form.Group controlId={`prices.${size}.original`}>
+                      <Form.Group controlId={`prices-${index}-originalPrice`}>
                         <Form.ControlLabel>
                           {t("pizzas.originalPrice")}
                         </Form.ControlLabel>
                         <Form.Control
-                          name={`prices.${size}.original`}
+                          name={`prices[${index}].originalPrice`}
                           accepter={InputNumber}
                           min={0}
                           step={0.01}
                         />
                       </Form.Group>
 
-                      <Form.Group controlId={`prices.${size}.discount`}>
+                      <Form.Group controlId={`prices-${index}-discountPrice`}>
                         <Form.ControlLabel>
                           {t("pizzas.discountPrice")}
                         </Form.ControlLabel>
                         <Form.Control
-                          name={`prices.${size}.discount`}
+                          name={`prices[${index}].discountPrice`}
                           accepter={InputNumber}
                           min={0}
                           step={0.01}

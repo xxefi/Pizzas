@@ -9,11 +9,13 @@ using Pizzas.Core.Abstractions.Repositories.Main;
 using Pizzas.Core.Abstractions.Services.Auth;
 using Pizzas.Core.Abstractions.Services.Main;
 using Pizzas.Core.Abstractions.UOW;
+using Pizzas.Core.Entities.Main;
 using Pizzas.Infrastructure.Context;
 using Pizzas.Infrastructure.Repositories.Auth;
 using Pizzas.Infrastructure.Repositories.Main;
 using Pizzas.Infrastructure.UOW;
 using Pizzas.Presentation.Extensions;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +60,11 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddPresentationServices();
 
+builder.Services.Configure<SmtpSettingsEntity>(builder.Configuration.GetSection("SmtpSettings"));
+
+
+builder.Services.AddScoped<IRedisCacheService, RedisCacheService>();
+
 builder.Services.AddScoped<IUserActiveSessionsRepository, UserActiveSessionsRepository>();
 builder.Services.AddScoped<IBlackListedRepository, BlackListedRepository>();
 builder.Services.AddScoped<IAddressRepository, AddressRepository>();
@@ -77,6 +84,8 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IOtpService, OtpService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IBlackListedService, BlackListedService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
@@ -103,6 +112,22 @@ builder.Services.AddHttpClient<ICurrencyService, CurrencyService>();
 builder.Services.AddSingleton<ILocalizationService, LocalizationService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetSection("Redis:Configuration").Value;
+    options.InstanceName = "PizzasApp_"; 
+});
+
+var redisConnectionString = builder.Configuration["Redis:Configuration"];
+
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(
+    ConnectionMultiplexer.Connect(redisConnectionString!));
+
+builder.Services.AddSingleton<ISubscriber>(sp =>
+    sp.GetRequiredService<IConnectionMultiplexer>().GetSubscriber());
 
 builder.Services.AddCors(options =>
     options.AddDefaultPolicy(policy =>

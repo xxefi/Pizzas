@@ -16,6 +16,7 @@
         <PackageReference Include="Localization.AspNetCore.TagHelpers" Version="0.6.0" />
         <PackageReference Include="MediatR" Version="12.5.0" />
         <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.3.0" />
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0-preview.4.25258.110" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.1" />
         <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.2" />

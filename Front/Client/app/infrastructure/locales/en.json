@@ -216,6 +216,12 @@
     "Success": "You have logged in",
     "LogoutSuccess": "You have logged out"
   },
+  "OTP": {
+    "otpVerifedSuccess": "OTP verified successfully",
+    "invalidOtp": "Invalid OTP code",
+    "otpResendSuccessfully": "OTP has been resent successfully",
+    "failedToResend": "Failed to resend OTP"
+  },
   "Register": {
     "Title": "Registration",
     "Subtitle": "Create an account to get started",
@@ -237,6 +243,13 @@
     "Register": "Register",
     "HaveAccount": "Already have an account?",
     "Login": "Login",
+    "OTPCode": "Verification Code",
+    "OTPPlaceholder": "Enter the code",
+    "EnterOTPMessage": "Enter the code sent to your email",
+    "VerifyOTP": "Verify Code",
+    "NotReceivedCode": "Didn't receive the code?",
+    "ResendCode": "Resend Code",
+    "ResendCodeTimer": "Resend in {seconds}s",
     "Success": "Registration completed successfully",
     "Validation": {
       "UsernameRequired": "Username is required",

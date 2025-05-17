@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using MongoDB.Bson;
+using NanoidDotNet;
 using Pizzas.Core.Enums;
 
 namespace Pizzas.Core.Entities.Main;
 
 public class BasketItemEntity
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
+    public string Id { get; set; } = Nanoid.Generate(size: 24);
     public string PizzaId { get; set; } = string.Empty;
     public string BasketId { get; set; } = string.Empty;
     public decimal Price { get; set; }

@@ -107,4 +107,16 @@
     <data name="StreetRequired" xml:space="preserve">
         <value />
     </data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value />
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value />
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value />
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value />
+    </data>
 </root>

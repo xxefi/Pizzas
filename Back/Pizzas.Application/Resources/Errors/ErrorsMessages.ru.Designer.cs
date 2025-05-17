@@ -204,6 +204,15 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Неверный или просроченный OTP.
+        /// </summary>
+        internal static string InvalidOrExpiredOtp {
+            get {
+                return ResourceManager.GetString("InvalidOrExpiredOtp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пароль должен содержать не менее 8 символов, включая буквы и цифры.
         /// </summary>
         internal static string InvalidPassword {
@@ -384,6 +393,15 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пожалуйста, подождите перед повторным запросом OTP.
+        /// </summary>
+        internal static string PleaseWaitBeforeRequesting {
+            get {
+                return ResourceManager.GetString("PleaseWaitBeforeRequesting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Неверный формат почтового индекса.
         /// </summary>
         internal static string PostalCodeInvalid {
@@ -492,11 +510,29 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Пользователь уже существует.
+        /// </summary>
+        internal static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Аккаунт не найден. Похоже, пора зарегистрироваться 😉.
         /// </summary>
         internal static string UserDoesNotExist {
             get {
                 return ResourceManager.GetString("UserDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Имя пользователя должно быть в нижнем регистре.
+        /// </summary>
+        internal static string UsernameMustBeLowercase {
+            get {
+                return ResourceManager.GetString("UsernameMustBeLowercase", resourceCulture);
             }
         }
         

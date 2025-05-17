@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using MongoDB.Bson;
 using Pizzas.Common.Exceptions;
 using Pizzas.Common.Extentions;
 using Pizzas.Core.Abstractions.Repositories.Main;
@@ -68,13 +69,12 @@ public class FavoriteService : IFavoriteService
 
             priceIndex++;
         }
+        var favorite = _mapper.Map<FavoriteEntity>(pizza);
+        favorite.UserId = userId;
+        favorite.PizzaId = pizzaId;
 
         return await _unitOfWork.StartTransactionAsync(async () =>
         {
-            var favorite = _mapper.Map<FavoriteEntity>(pizza);
-            favorite.UserId = userId;
-            favorite.PizzaId = pizzaId;
-            
             await _favoriteRepository.AddAsync(favorite);
 
             return _mapper.Map<FavoriteDto>(favorite);

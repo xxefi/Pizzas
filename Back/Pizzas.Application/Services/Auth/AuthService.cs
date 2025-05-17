@@ -1,6 +1,9 @@
 using System.Security.Claims;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Pizzas.Common.Exceptions;
+using Pizzas.Common.Extentions;
+using Pizzas.Core.Abstractions.Repositories.Main;
 using Pizzas.Core.Abstractions.Services.Auth;
 using Pizzas.Core.Abstractions.Services.Main;
 using Pizzas.Core.Dtos.Auth;
@@ -17,18 +20,30 @@ namespace Pizzas.Application.Services.Auth;
 public class AuthService : IAuthService
 {
     private readonly IUserService _userService;
+    private readonly IEmailService _emailService;
+    private readonly IOtpService _otpService;
     private readonly ITokenService _tokenService;
     private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IValidator<CreateUserDto> _createUserValidator;
+    private readonly IUserRepository _userRepository;
     private readonly IBlackListedService _blackListedService;
     private readonly IUserActiveSessionsService _userActiveSessionsService;
 
     public AuthService(IUserService userService,
+        IEmailService emailService,
+        IOtpService otpService,
         ITokenService tokenService, IHttpContextAccessor httpContextAccessor,
+        IValidator<CreateUserDto> createUserValidator,
+        IUserRepository userRepository,
         IBlackListedService blackListedService, IUserActiveSessionsService userActiveSessionsService)
     {
         _userService = userService;
+        _emailService = emailService;
+        _otpService = otpService;
         _tokenService = tokenService;
         _httpContextAccessor = httpContextAccessor;
+        _createUserValidator = createUserValidator;
+        _userRepository = userRepository;
         _blackListedService = blackListedService;
         _userActiveSessionsService = userActiveSessionsService;
     }
@@ -100,9 +115,42 @@ public class AuthService : IAuthService
 
     }
 
-    public async Task<UserDto> RegisterAsync(CreateUserDto userDto)
+    public async Task<string> RegisterAsync(CreateUserDto userDto)
     {
-        var user = await _userService.CreateUserAsync(userDto);
+        await _createUserValidator.ValidateAndThrowAsync(userDto);
+
+        var existingUser = (await _userRepository.FindAsync(
+                u => u.Email == userDto.Email || u.Username == userDto.Username))
+            .FirstOrDefault();
+        
+        if (existingUser is not null)
+            throw new PizzasException(ExceptionType.Conflict, "UserAlreadyExists");
+            
+        var sessionId = Guid.NewGuid().ToString();
+
+        await _otpService.SavePendingUserAsync(sessionId, userDto);
+        var otp = await _otpService.GenerateAndSaveOtpAsync(sessionId);
+
+        await _emailService.SendOtpAsync(userDto.Email, otp);
+
+        return sessionId; 
+    }
+
+    public async Task<UserDto> ConfirmOtpAsync(string sessionId, string otp)
+    {
+        if (string.IsNullOrWhiteSpace(sessionId) || string.IsNullOrWhiteSpace(otp))
+            throw new PizzasException(ExceptionType.InvalidRequest, "SessionIdAndOtpRequired");
+        
+        var isOtpValid = await _otpService.VerifyOtpAsync(sessionId, otp);
+        if (!isOtpValid)
+            throw new PizzasException(ExceptionType.InvalidCredentials, "InvalidOrExpiredOtp");
+        
+        var pendingUser = await _otpService.GetPendingUserAsync(sessionId)
+            ?? throw new PizzasException(ExceptionType.InvalidRequest, "PendingUserNotFound");
+        
+        var user = await _userService.CreateUserAsync(pendingUser);
+        await _otpService.ClearOtpAndPendingUserAsync(sessionId);
+        
         return user;
     }
 

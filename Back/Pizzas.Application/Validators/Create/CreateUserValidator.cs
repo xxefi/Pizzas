@@ -10,7 +10,9 @@ public class CreateUserValidator : AbstractValidator<CreateUserDto>
     {
         RuleFor(user => user.Username)
             .NotEmpty()
-            .WithMessage(_ => ls.GetLocalizedString("UsernameRequired"));
+            .WithMessage(_ => ls.GetLocalizedString("UsernameRequired"))
+            .Must(username => username == username.ToLowerInvariant())
+            .WithMessage(_ => ls.GetLocalizedString("UsernameMustBeLowercase"));
 
         RuleFor(user => user.FirstName)
             .NotEmpty()

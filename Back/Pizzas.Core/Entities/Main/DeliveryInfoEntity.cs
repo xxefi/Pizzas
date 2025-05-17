@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using MongoDB.Bson;
+using NanoidDotNet;
 
 namespace Pizzas.Core.Entities.Main;
 
 public class DeliveryInfoEntity
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public string Id { get; set; } = ObjectId.GenerateNewId().ToString();
+    public string Id { get; set; } = Nanoid.Generate(size: 24);
     public string UserId { get; set; } = string.Empty;
     public string OrderId { get; set; } = string.Empty;
     public string Address { get; set; } = string.Empty;

@@ -168,4 +168,16 @@
     <data name="PostalCodeMaxLength" xml:space="preserve">
   <value>Postal code must not exceed {0} characters</value>
 </data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value>OTP is invalid or has expired</value>
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value>User already exists</value>
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value>Username must contain only lowercase letters</value>
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value>Please wait before requestinga new OTP</value>
+    </data>
 </root>

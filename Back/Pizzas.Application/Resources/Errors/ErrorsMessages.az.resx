@@ -171,4 +171,16 @@
     <data name="NotEnoughIngredientAvailable" xml:space="preserve">
         <value>{0} kifayət qədər mövcud deyil</value>
     </data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value>OTP etibarsızdır və ya müddətibitmişdir</value>
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value>İstifadəçi artıq mövcuddur</value>
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value>İstifadəçi adı yalnız kiçik hərflərlə olmalıdır</value>
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value>Yeni OTP tələb etmədən əvvəlzəhmət olmasa gözləyin</value>
+    </data>
 </root>

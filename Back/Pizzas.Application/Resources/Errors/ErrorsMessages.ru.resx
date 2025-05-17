@@ -171,4 +171,16 @@
     <data name="NotEnoughIngredientAvailable" xml:space="preserve">
         <value>Недостаточно {0} в наличии</value>
     </data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value>Неверный или просроченный OTP</value>
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value>Пользователь уже существует</value>
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value>Имя пользователя должно быть в нижнем регистре</value>
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value>Пожалуйста, подождите перед повторным запросом OTP</value>
+    </data>
 </root>

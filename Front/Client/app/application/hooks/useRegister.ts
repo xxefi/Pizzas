@@ -1,43 +1,38 @@
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { registerStore } from "../stores/registerStore";
 import { handleApiError } from "@/app/infrastructure/api/httpClient";
 import { authService } from "@/app/infrastructure/services/authService";
 import { toast } from "sonner";
+import { otpStore } from "../stores/otpStore";
 
 export const useRegister = () => {
-  const router = useRouter();
   const t = useTranslations("Register");
 
-  const {
-    formData,
-    loading,
-    error,
-    setFormData,
-    setLoading,
-    setError,
-    resetForm,
-  } = registerStore();
+  const { formData, loading, error, setFormData, setLoading, setError } =
+    registerStore();
+  const { setSessionId } = otpStore();
 
-  const register = async () => {
+  const register = async (): Promise<boolean> => {
+    if (loading) return false;
+
     setLoading(true);
     setError("");
-
-    if (loading) return;
 
     try {
       const { username, firstName, lastName, email, password } = formData;
 
-      await authService.register({
+      const sessionId = await authService.register({
         username,
         firstName,
         lastName,
         email,
         password,
       });
-      toast.success(t("Success"));
-      resetForm();
-      router.push("/login");
+
+      if (sessionId) {
+        setSessionId(sessionId);
+        return true;
+      } else return false;
     } catch (err: unknown) {
       let errorMessage = t("error");
 
@@ -48,8 +43,10 @@ export const useRegister = () => {
           errorMessage = error.message;
         }
       }
+
       setError(errorMessage);
       toast.error(errorMessage);
+      return false;
     } finally {
       setLoading(false);
     }

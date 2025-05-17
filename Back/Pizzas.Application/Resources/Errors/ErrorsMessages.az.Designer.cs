@@ -204,6 +204,15 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OTP etibarsızdır və ya müddətibitmişdir.
+        /// </summary>
+        internal static string InvalidOrExpiredOtp {
+            get {
+                return ResourceManager.GetString("InvalidOrExpiredOtp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Şifrə ən azı 8 simvol olmalı və hərf və rəqəm ehtiva etməlidir.
         /// </summary>
         internal static string InvalidPassword {
@@ -384,6 +393,15 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yeni OTP tələb etmədən əvvəlzəhmət olmasa gözləyin.
+        /// </summary>
+        internal static string PleaseWaitBeforeRequesting {
+            get {
+                return ResourceManager.GetString("PleaseWaitBeforeRequesting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Poçt indeksi formatı yanlışdır.
         /// </summary>
         internal static string PostalCodeInvalid {
@@ -492,11 +510,29 @@ namespace Pizzas.Application.Resources.Errors {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İstifadəçi artıq mövcuddur.
+        /// </summary>
+        internal static string UserAlreadyExists {
+            get {
+                return ResourceManager.GetString("UserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Belə bir hesab tapılmadı. Görünür, qeydiyyatdan keçmək vaxtıdır 😉.
         /// </summary>
         internal static string UserDoesNotExist {
             get {
                 return ResourceManager.GetString("UserDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İstifadəçi adı yalnız kiçik hərflərlə olmalıdır.
+        /// </summary>
+        internal static string UsernameMustBeLowercase {
+            get {
+                return ResourceManager.GetString("UsernameMustBeLowercase", resourceCulture);
             }
         }
         
