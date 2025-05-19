@@ -1,7 +1,6 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Nav, Sidenav, Badge } from "rsuite";
+import { Nav, Sidenav, Badge, Button } from "rsuite";
 import {
   LayoutDashboard,
   FileText,
@@ -12,11 +11,13 @@ import {
   Activity,
   Bell,
 } from "lucide-react";
+import { useAuth } from "../../../application/hooks/useAuth";
 
 export const Sidebar = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -40,11 +41,6 @@ export const Sidebar = () => {
       path: "/orders",
       icon: <ShoppingCart size={20} />,
       label: t("sidebar.orders"),
-    },
-    {
-      path: "/settings",
-      icon: <Settings size={20} />,
-      label: t("sidebar.settings"),
     },
   ];
 
@@ -137,6 +133,10 @@ export const Sidebar = () => {
           </Nav>
         </Sidenav.Body>
       </Sidenav>
+
+      <Button onClick={logout}>
+        <span>Logout</span>
+      </Button>
 
       <div className="p-4 space-y-4">
         <div className="flex items-center justify-between p-4 rounded-2xl border border-gray-100 bg-white/50 backdrop-blur-sm">

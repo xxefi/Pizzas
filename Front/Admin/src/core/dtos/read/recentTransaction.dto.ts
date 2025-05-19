@@ -1,8 +1,8 @@
 export interface RecentTransactionDto {
-  id: string;
-  date: string;
-  customer: string;
+  orderId: string;
+  customerName: string;
   amount: number;
-  status: "pending" | "completed" | "cancelled";
-  items: number;
+  date: string;
+  status: "Pending" | "Completed" | "Cancelled";
+  paymentMethod: string;
 }

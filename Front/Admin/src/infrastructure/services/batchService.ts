@@ -1,5 +1,5 @@
 import type { BatchRequest } from "../../core/requests/batchRequest.type";
-import { handleApiError, apiClient } from "../api/httpClient";
+import { handleApiError, apiClient } from "../api/apiClient";
 
 export const batchService = {
   execute: async (requests: BatchRequest[]): Promise<any[]> => {

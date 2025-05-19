@@ -7,7 +7,7 @@ import type {
   SalesStatsDto,
   TopProductDto,
 } from "../../core/dtos";
-import { handleApiError } from "../api/httpClient";
+import { handleApiError } from "../api/apiClient";
 import { dashboardRequests } from "../requests/dashboardRequests";
 import { batchService } from "./batchService";
 

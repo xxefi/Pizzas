@@ -91,7 +91,10 @@
     "ingredients": "Ингредиенты",
     "size": "размер",
     "addToCart": "В корзину",
-    "outOfStock": "Нет в наличии"
+    "outOfStock": "Нет в наличии",
+    "large": "Большая",
+    "medium": "Средняя",
+    "small": "Маленькая"
   },
   "Navbar": {
     "home": "Главная",
@@ -104,7 +107,8 @@
     "notAuthorized": "Вы не авторизованы",
     "favorites": "Избранное",
     "addresses": "Мои адреса",
-    "basket": "Корзина"
+    "basket": "Корзина",
+    "orders": "Мои заказы"
   },
   "Addresses": {
     "myAddresses": "Мои адреса",
@@ -137,14 +141,19 @@
     "subtotal": "Подытог",
     "delivery": "Доставка",
     "total": "Итого",
-    "placeOrder": "Оформить заказ"
+    "placeOrder": "Оформить заказ",
+    "orderCreated": "Заказ успешно создан"
   },
   "Orders": {
     "myOrders": "Мои заказы",
     "orderNumber": "Номер заказа",
     "totalAmount": "Сумма",
     "deliveryAddress": "Адрес доставки",
-    "items": "Товары"
+    "items": "Товары",
+    "Pending": "В ожидании",
+    "InProgress": "В процессе",
+    "Completed": "Завершено",
+    "Canceled": "Отменено"
   },
   "Favorites": {
     "title": "Мои избранные",

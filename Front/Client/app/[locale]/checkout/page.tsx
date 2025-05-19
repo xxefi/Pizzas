@@ -194,7 +194,15 @@ export default function CheckoutPage() {
                 </div>
 
                 <button
-                  onClick={() => handleSubmit}
+                  onClick={() =>
+                    handleSubmit(
+                      selectedAddress,
+                      paymentMethod,
+                      items,
+                      totalPrice,
+                      t
+                    )
+                  }
                   disabled={!selectedAddress || loading || items.length === 0}
                   className="w-full mt-6 px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >

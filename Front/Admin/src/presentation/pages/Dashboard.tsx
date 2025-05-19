@@ -13,11 +13,16 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 import { StatCard } from "../components/other/dashboard/StatCard";
 import { useDashboard } from "../../application/hooks/useDashboard";
 import { formatCurrency } from "../extentions/formatCurrency";
 import LoaderComponent from "../components/widgets/LoadingComponent";
+
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -30,6 +35,10 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  const recentOrders = dashboardData?.[4] || [];
+  const salesData = dashboardData?.[5] || [];
+  const topProducts = dashboardData?.[6] || [];
 
   return (
     <div className="space-y-6 p-6">
@@ -100,6 +109,18 @@ export default function Dashboard() {
                 {dashboardData?.[1]?.cancelledOrders || 0}
               </span>
             </div>
+            <div className="flex justify-between items-center">
+              <span>{t("dashboard.avgPreparationTime")}</span>
+              <span className="font-semibold">
+                {dashboardData?.[1]?.averagePreparationTime || 0} min
+              </span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>{t("dashboard.avgDeliveryTime")}</span>
+              <span className="font-semibold">
+                {dashboardData?.[1]?.averageDeliveryTime || 0} min
+              </span>
+            </div>
           </div>
         </div>
 
@@ -107,11 +128,39 @@ export default function Dashboard() {
           <h2 className="text-lg font-semibold mb-4">
             {t("dashboard.customerSegments")}
           </h2>
-          <div className="space-y-4">
+          <div className="h-[200px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={dashboardData?.[2]?.segments || []}
+                  dataKey="count"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={80}
+                  label
+                >
+                  {dashboardData?.[2]?.segments.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="mt-4 space-y-2">
             {dashboardData?.[2]?.segments.map((segment, index) => (
               <div key={index} className="flex justify-between items-center">
-                <span>{t(`dashboard.segments.${segment.name}`)}</span>
-
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                  />
+                  <span>{t(`dashboard.segments.${segment.name}`)}</span>
+                </div>
                 <span className="font-semibold">{segment.count}</span>
               </div>
             ))}
@@ -119,19 +168,86 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {dashboardData?.[5]?.length > 0 && (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h2 className="text-lg font-semibold mb-4">
+            {t("dashboard.recentOrders")}
+          </h2>
+          <div className="space-y-4">
+            {recentOrders.map((order) => (
+              <div
+                key={order.orderId}
+                className="flex justify-between items-center p-4 bg-gray-50 rounded-lg"
+              >
+                <div>
+                  <div className="font-medium">{order.customerName}</div>
+                  <div className="text-sm text-gray-500">
+                    {new Date(order.date).toLocaleString()}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="font-semibold">
+                    {formatCurrency(order.amount)}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {t(`orders.statuses.${order.status}`)}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm">
+          <h2 className="text-lg font-semibold mb-4">
+            {t("dashboard.topProducts")}
+          </h2>
+          <div className="space-y-4">
+            {topProducts.map((product) => (
+              <div
+                key={product.id}
+                className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
+              >
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="w-16 h-16 object-cover rounded-lg"
+                />
+                <div className="flex-1">
+                  <div className="font-medium">{product.name}</div>
+                </div>
+                <div className="text-right">
+                  <div className="font-semibold">
+                    {formatCurrency(product.revenue)}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {t("dashboard.stock")}: {product.stock}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {salesData.length > 0 && (
         <div className="bg-white rounded-xl p-6 shadow-sm">
           <h2 className="text-lg font-semibold mb-4">
             {t("dashboard.salesChart")}
           </h2>
           <div className="h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={dashboardData[5]}>
+              <BarChart data={salesData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
+                <XAxis dataKey="date" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="sales" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="revenue" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                <Bar
+                  dataKey="orderCount"
+                  fill="#10b981"
+                  radius={[4, 4, 0, 0]}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>

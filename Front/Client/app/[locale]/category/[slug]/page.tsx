@@ -50,25 +50,7 @@ export default function CategoryPage({
             ))}
           </div>
 
-          {totalPages > 1 && (
-            <div className="mt-8 flex justify-center">
-              <Pagination
-                activePage={currentPage}
-                pages={totalPages}
-                onSelect={(page: number) =>
-                  handleCategoryPageChange(slug, page)
-                }
-                prev
-                next
-                first
-                last
-                ellipsis
-                boundaryLinks
-                maxButtons={5}
-                className="custom-pagination dark"
-              />
-            </div>
-          )}
+          {totalPages > 1 && <div className="mt-8 flex justify-center"></div>}
         </>
       )}
     </div>

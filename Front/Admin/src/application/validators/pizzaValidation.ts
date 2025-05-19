@@ -1,25 +1,33 @@
 import { Schema } from "rsuite";
+import type { TFunction } from "i18next";
 
-const { StringType, NumberType, ArrayType } = Schema.Types;
+const { StringType, NumberType, ArrayType, ObjectType } = Schema.Types;
 
-export const pizzaValidationModel = Schema.Model({
-  name: StringType().isRequired("Name is required"),
-  category: StringType().isRequired("Category is required"),
-  imageUrl: StringType().isRequired("Image URL is required"),
-  rating: NumberType().range(0, 5, "Rating must be between 0 and 5"),
-  ingredients: ArrayType().minLength(1, "At least one ingredient is required"),
-  prices: Schema.Types.ObjectType().shape({
-    Small: Schema.Types.ObjectType().shape({
-      original: NumberType().min(0, "Price must be positive").isRequired(),
-      discount: NumberType().min(0, "Discount must be positive"),
+export const pizzaValidationModel = (t: TFunction) =>
+  Schema.Model({
+    name: StringType().isRequired(t("validation.nameRequired")),
+    category: StringType().isRequired(t("validation.categoryRequired")),
+    imageUrl: StringType().isRequired(t("validation.imageUrlRequired")),
+    rating: NumberType().range(0, 5, t("validation.ratingRange")),
+    ingredients: ArrayType().minLength(1, t("validation.ingredientsMin")),
+    prices: ObjectType().shape({
+      Small: ObjectType().shape({
+        original: NumberType()
+          .min(0, t("validation.pricePositive"))
+          .isRequired(t("validation.priceRequired")),
+        discount: NumberType().min(0, t("validation.discountPositive")),
+      }),
+      Medium: ObjectType().shape({
+        original: NumberType()
+          .min(0, t("validation.pricePositive"))
+          .isRequired(t("validation.priceRequired")),
+        discount: NumberType().min(0, t("validation.discountPositive")),
+      }),
+      Large: ObjectType().shape({
+        original: NumberType()
+          .min(0, t("validation.pricePositive"))
+          .isRequired(t("validation.priceRequired")),
+        discount: NumberType().min(0, t("validation.discountPositive")),
+      }),
     }),
-    Medium: Schema.Types.ObjectType().shape({
-      original: NumberType().min(0, "Price must be positive").isRequired(),
-      discount: NumberType().min(0, "Discount must be positive"),
-    }),
-    Large: Schema.Types.ObjectType().shape({
-      original: NumberType().min(0, "Price must be positive").isRequired(),
-      discount: NumberType().min(0, "Discount must be positive"),
-    }),
-  }),
-});
+  });

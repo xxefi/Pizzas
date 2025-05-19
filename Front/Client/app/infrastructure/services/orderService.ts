@@ -38,29 +38,4 @@ export const orderService = {
       throw e;
     }
   },
-
-  updateOrder: async (
-    orderId: string,
-    order: IOrder
-  ): Promise<IOrder | null> => {
-    try {
-      const response = await batchService.execute(
-        orderRequests.updateOrder(orderId, order)
-      );
-      return response[0] || null;
-    } catch (e) {
-      handleApiError(e);
-      return null;
-    }
-  },
-
-  deleteOrder: async (orderId: string): Promise<boolean> => {
-    try {
-      await batchService.execute(orderRequests.deleteOrder(orderId));
-      return true;
-    } catch (e) {
-      handleApiError(e);
-      return false;
-    }
-  },
 };

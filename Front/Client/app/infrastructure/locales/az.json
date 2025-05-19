@@ -19,6 +19,7 @@
       "description": "İstədiyiniz vaxt sifariş verin"
     }
   },
+
   "Review": {
     "notAuthorized": "Siz sistemə daxil olmamısınız",
     "rating": "Qiymət",
@@ -150,6 +151,7 @@
     "basket": "Səbətim",
     "favorites": "Seçilmişlər",
     "addresses": "Ünvanlarım",
+    "orders": "Sifarişlərim",
     "notAuthorized": "Siz sistemə daxil olmamısınız"
   },
   "Addresses": {
@@ -183,14 +185,19 @@
     "subtotal": "Ara Cəm",
     "delivery": "Çatdırılma",
     "total": "Cəm",
-    "placeOrder": "Sifariş Et"
+    "placeOrder": "Sifariş Et",
+    "orderCreated": "Sifariş uğurla yarandı"
   },
   "Orders": {
     "myOrders": "Mənim Sifarişlərim",
     "orderNumber": "Sifariş Nömrəsi",
     "totalAmount": "Cəm Məbləğ",
     "deliveryAddress": "Çatdırılma Ünvanı",
-    "items": "Məhsullar"
+    "items": "Məhsullar",
+    "Pending": "Gözləmədə",
+    "InProgress": "İcra olunur",
+    "Completed": "Tamamlandı",
+    "Canceled": "Ləğv edildi"
   },
   "Favorites": {
     "title": "Sevimlilərim",

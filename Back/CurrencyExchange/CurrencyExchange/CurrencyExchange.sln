@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchange.Presentation", "CurrencyExchange.Presentation\CurrencyExchange.Presentation.csproj", "{0031C356-32F4-4AEE-A78A-F105AAE8E8C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchange.Application", "CurrencyExchange.Application\CurrencyExchange.Application.csproj", "{AC6EA7F8-6532-4354-8E83-798FC927400D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchange.Domain", "CurrencyExchange.Domain\CurrencyExchange.Domain.csproj", "{78825952-27C6-48C1-96DF-5BCB8C6C9306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyExchange.Infrastructure", "CurrencyExchange.Infrastructure\CurrencyExchange.Infrastructure.csproj", "{926DB8E9-E5A6-48B7-9377-4AC2943655E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0031C356-32F4-4AEE-A78A-F105AAE8E8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0031C356-32F4-4AEE-A78A-F105AAE8E8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0031C356-32F4-4AEE-A78A-F105AAE8E8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0031C356-32F4-4AEE-A78A-F105AAE8E8C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6EA7F8-6532-4354-8E83-798FC927400D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6EA7F8-6532-4354-8E83-798FC927400D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6EA7F8-6532-4354-8E83-798FC927400D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6EA7F8-6532-4354-8E83-798FC927400D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78825952-27C6-48C1-96DF-5BCB8C6C9306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78825952-27C6-48C1-96DF-5BCB8C6C9306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78825952-27C6-48C1-96DF-5BCB8C6C9306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78825952-27C6-48C1-96DF-5BCB8C6C9306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926DB8E9-E5A6-48B7-9377-4AC2943655E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926DB8E9-E5A6-48B7-9377-4AC2943655E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926DB8E9-E5A6-48B7-9377-4AC2943655E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926DB8E9-E5A6-48B7-9377-4AC2943655E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

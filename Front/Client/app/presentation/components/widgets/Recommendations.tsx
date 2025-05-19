@@ -193,10 +193,7 @@ export const Recommendations: FC = () => {
                         <Text className="text-sm text-gray-500 dark:text-gray-400">
                           Цена
                         </Text>
-                        <Text
-                          weight="semibold"
-                          className="text-2xl text-green-600 dark:text-green-400"
-                        >
+                        <Text className="text-2xl text-green-600 dark:text-green-400">
                           {pizza.price}
                         </Text>
                       </div>

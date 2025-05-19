@@ -8,6 +8,7 @@ import {
   IconButton,
   Whisper,
   Tooltip,
+  Pagination,
 } from "rsuite";
 import { InfoIcon, Star } from "lucide-react";
 import EditIcon from "@rsuite/icons/Edit";
@@ -18,6 +19,7 @@ import { formatCurrency } from "../../../extentions/formatCurrency";
 import PizzaPriceCell from "../priceSell/PizzaPriceSell";
 import type { IIngredients } from "../../../../core/interfaces/data/ingredients.data";
 import type { IPizzas } from "../../../../core/interfaces/data/pizzas.data";
+import { useState } from "react";
 
 const { Column, HeaderCell, Cell } = Table;
 
@@ -32,6 +34,16 @@ export default function PizzaTableContent({
   setDetailsDrawer,
   t,
 }: IPizzaTableContentProps) {
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(5);
+
+  const handleChangeLimit = (dataKey: number) => {
+    setPage(1);
+    setLimit(dataKey);
+  };
+
+  const data = pizzasPage?.slice((page - 1) * limit, page * limit) || [];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -39,23 +51,25 @@ export default function PizzaTableContent({
       transition={{ delay: 0.2 }}
       className="bg-white rounded-xl shadow-lg overflow-hidden border border-red-100"
     >
-      <div className="p-4">
+      <div className="p-4 flex justify-between items-center">
         <h2 className="text-xl font-bold">{t("pizzas.menuItems")}</h2>
+        <div className="flex items-center gap-2"></div>
       </div>
 
       <Table
         autoHeight
-        data={pizzasPage || []}
-        rowHeight={110}
+        data={data}
+        rowHeight={120}
         hover
         rowClassName="hover:bg-red-50 transition-colors duration-150"
         headerHeight={65}
+        className="min-h-[500px]"
       >
-        <Column width={130} align="center">
+        <Column width={140} align="center" fixed>
           <HeaderCell className={headerClass}>{t("pizzas.image")}</HeaderCell>
           <Cell>
             {(rowData) => (
-              <div className="relative w-24 h-24 mx-auto my-2">
+              <div className="relative w-28 h-28 mx-auto my-2">
                 <img
                   src={rowData.imageUrl || "/placeholder.svg"}
                   alt={rowData.name}
@@ -80,13 +94,13 @@ export default function PizzaTableContent({
           </Cell>
         </Column>
 
-        <Column flexGrow={1}>
+        <Column flexGrow={1} minWidth={200}>
           <HeaderCell className={headerClass}>{t("pizzas.name")}</HeaderCell>
           <Cell>
             {(rowData) => (
               <div className="py-2">
-                <div className="font-bold text-lg">{rowData.name}</div>
-                <Tag color="blue" className="mt-1 shadow-sm">
+                <div className="font-bold text-lg mb-2">{rowData.name}</div>
+                <Tag color="blue" className="shadow-sm">
                   {t(`pizzas.${rowData.category}`)}
                 </Tag>
               </div>
@@ -94,19 +108,19 @@ export default function PizzaTableContent({
           </Cell>
         </Column>
 
-        <Column width={150}>
+        <Column width={180} fixed>
           <HeaderCell className={headerClass}>{t("pizzas.rating")}</HeaderCell>
           <Cell>
             {(rowData) => (
-              <div className="flex items-center">
+              <div className="flex flex-col items-center justify-center h-full">
                 <Rate
                   readOnly
                   value={Math.round(rowData.rating)}
                   color="yellow"
-                  size="sm"
-                  className="text-yellow-400"
+                  size="md"
+                  className="text-yellow-400 mb-1"
                 />
-                <span className="ml-2 text-gray-600 font-medium">
+                <span className="text-gray-600 font-medium bg-yellow-50 px-2 py-1 rounded-full">
                   {rowData.rating.toFixed(1)}
                 </span>
               </div>
@@ -114,33 +128,35 @@ export default function PizzaTableContent({
           </Cell>
         </Column>
 
-        <Column width={200}>
+        <Column width={250} minWidth={200}>
           <HeaderCell className={headerClass}>
             {t("pizzas.ingredients")}
           </HeaderCell>
           <Cell>
             {(rowData) => {
-              const visibleIngredients = rowData.ingredients.slice(0, 2);
-              const remainingCount = rowData.ingredients.length - 2;
+              const visibleIngredients = rowData.ingredients.slice(0, 3);
+              const remainingCount = rowData.ingredients.length - 3;
 
               return (
                 <Whisper
                   placement="top"
                   trigger="hover"
                   speaker={
-                    <Tooltip>
-                      {rowData.ingredients.map(
-                        (ingredient: IIngredients, i: number) => (
-                          <span key={i}>
-                            {ingredient.name}
-                            {i < rowData.ingredients.length - 1 ? ", " : ""}
-                          </span>
-                        )
-                      )}
+                    <Tooltip className="max-w-xs">
+                      <div className="p-2">
+                        {rowData.ingredients.map(
+                          (ingredient: IIngredients, i: number) => (
+                            <span key={i} className="text-sm">
+                              {ingredient.name}
+                              {i < rowData.ingredients.length - 1 ? ", " : ""}
+                            </span>
+                          )
+                        )}
+                      </div>
                     </Tooltip>
                   }
                 >
-                  <div className="flex flex-wrap gap-1 cursor-help">
+                  <div className="flex flex-wrap gap-1.5 cursor-help">
                     {visibleIngredients.map(
                       (ingredient: IIngredients, i: number) => (
                         <Tag
@@ -163,7 +179,7 @@ export default function PizzaTableContent({
           </Cell>
         </Column>
 
-        <Column width={200}>
+        <Column width={220} fixed>
           <HeaderCell className={headerClass}>{t("pizzas.price")}</HeaderCell>
           <Cell>
             {(rowData) => (
@@ -184,19 +200,18 @@ export default function PizzaTableContent({
           <Cell>
             {(rowData: IPizzas) => (
               <ButtonToolbar className="flex justify-center">
-                <ButtonGroup>
+                <ButtonGroup size="md">
                   <Whisper
                     placement="top"
                     trigger="hover"
                     speaker={<Tooltip>{t("pizzas.viewDetails")}</Tooltip>}
                   >
                     <IconButton
-                      size="md"
                       icon={<InfoIcon size={18} />}
                       onClick={() =>
                         setDetailsDrawer({ open: true, pizza: rowData })
                       }
-                      className="text-blue-600 hover:text-blue-700"
+                      className="text-blue-600 hover:text-blue-700 hover:bg-blue-50"
                     />
                   </Whisper>
                   <Whisper
@@ -206,9 +221,8 @@ export default function PizzaTableContent({
                   >
                     <IconButton
                       as={Link}
-                      size="md"
                       icon={<EditIcon />}
-                      className="text-green-600 hover:text-green-700"
+                      className="text-green-600 hover:text-green-700 hover:bg-green-50"
                       to={`/pizzas/edit/${rowData.id}`}
                     />
                   </Whisper>
@@ -218,9 +232,8 @@ export default function PizzaTableContent({
                     speaker={<Tooltip>{t("common.delete")}</Tooltip>}
                   >
                     <IconButton
-                      size="md"
                       icon={<TrashIcon />}
-                      className="text-red-600 hover:text-red-700"
+                      className="text-red-600 hover:text-red-700 hover:bg-red-50"
                       onClick={() => handleDeleteClick(rowData.id)}
                     />
                   </Whisper>
@@ -230,6 +243,27 @@ export default function PizzaTableContent({
           </Cell>
         </Column>
       </Table>
+
+      <div className="p-4 border-t border-gray-100">
+        <Pagination
+          prev
+          next
+          first
+          last
+          ellipsis
+          boundaryLinks
+          maxButtons={5}
+          size="md"
+          layout={["total", "-", "limit", "|", "pager", "skip"]}
+          total={pizzasPage?.length || 0}
+          limitOptions={[5, 10, 20, 50]}
+          limit={limit}
+          activePage={page}
+          onChangePage={setPage}
+          onChangeLimit={handleChangeLimit}
+          className="flex justify-center"
+        />
+      </div>
     </motion.div>
   );
 }

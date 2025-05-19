@@ -56,7 +56,7 @@ export default function Navbar() {
                 transition={{ duration: 0.2 }}
               >
                 <UserDropdown
-                  user={profile}
+                  user={profile!}
                   logout={logout}
                   t={t}
                   isActive={isActive}

@@ -9,6 +9,7 @@ import { IUserDropdownProps } from "@/app/core/interfaces/props/userDroptown.pro
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBasketIcon } from "lucide-react";
 import { MapPinIcon } from "@heroicons/react/24/solid";
+import { Icon28ShoppingCartOutline } from "@vkontakte/icons";
 
 export const UserDropdown: FC<IUserDropdownProps> = ({ user, logout, t }) => {
   const [open, setOpen] = useState(false);
@@ -173,6 +174,21 @@ export const UserDropdown: FC<IUserDropdownProps> = ({ user, logout, t }) => {
                     >
                       <Icon as={Heart} className="w-5 h-5 mr-3 text-pink-500" />
                       <span className="font-medium">{t("favorites")}</span>
+                    </Button>
+                  </motion.div>
+
+                  <motion.div>
+                    <Button
+                      appearance="subtle"
+                      block
+                      className="justify-start text-left hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                      onClick={() => handleAction(() => router.push("/orders"))}
+                    >
+                      <Icon
+                        as={Icon28ShoppingCartOutline}
+                        className="w-5 h-5 mr-3 text-pink-500"
+                      />
+                      <span className="font-medium">{t("orders")}</span>
                     </Button>
                   </motion.div>
 

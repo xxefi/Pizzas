@@ -1,7 +1,7 @@
 import type { CreatePizzaDto, UpdatePizzaDto } from "../../core/dtos";
 import type { IPizzas } from "../../core/interfaces/data/pizzas.data";
 import type { IPaginatedPizzasResponse } from "../../core/interfaces/response/paginatedPizzas.response";
-import { handleApiError } from "../api/httpClient";
+import { handleApiError } from "../api/apiClient";
 import { pizzaRequests } from "../requests/pizzaRequests";
 import { batchService } from "./batchService";
 

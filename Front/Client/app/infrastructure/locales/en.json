@@ -123,6 +123,7 @@
     "basket": "Basket",
     "favorites": "Favorites",
     "addresses": "Addresses",
+    "orders": "Orders",
     "notAuthorized": "You are not logged in"
   },
   "Addresses": {
@@ -156,14 +157,19 @@
     "subtotal": "Subtotal",
     "delivery": "Delivery",
     "total": "Total",
-    "placeOrder": "Place Order"
+    "placeOrder": "Place Order",
+    "orderCreated": "Order created successfully"
   },
   "Orders": {
     "myOrders": "My Orders",
     "orderNumber": "Order Number",
     "totalAmount": "Total Amount",
     "deliveryAddress": "Delivery Address",
-    "items": "Items"
+    "items": "Items",
+    "Pending": "Pending",
+    "InProgress": "In Progress",
+    "Completed": "Completed",
+    "Canceled": "Canceled"
   },
   "Basket": {
     "yourBasket": "Your Basket",
@@ -200,7 +206,10 @@
     "ingredients": "Ingredients",
     "size": "size",
     "addToCart": "Add to cart",
-    "outOfStock": "Out of stock"
+    "outOfStock": "Out of stock",
+    "large": "Large",
+    "medium": "Medium",
+    "small": "Small"
   },
   "Login": {
     "Title": "Welcome!",

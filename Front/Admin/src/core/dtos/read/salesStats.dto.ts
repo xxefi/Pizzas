@@ -1,5 +1,7 @@
 export interface SalesStatsDto {
   totalSales: number;
-  totalRevenue: number;
+  orderCount: number;
   averageOrderValue: number;
+  refundAmount: number;
+  paymentMethods: string[];
 }

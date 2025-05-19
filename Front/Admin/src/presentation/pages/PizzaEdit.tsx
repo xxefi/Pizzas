@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState, type JSX } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
   Form,
@@ -7,117 +6,29 @@ import {
   Button,
   InputNumber,
   ButtonToolbar,
-  TagInput,
   Toggle,
   Rate,
   SelectPicker,
   Stack,
-  Message,
-  useToaster,
+  CheckPicker,
 } from "rsuite";
-import { motion } from "framer-motion";
-import { usePizzas } from "../../application/hooks/usePizzas";
-import type { UpdatePizzaDto } from "../../core/dtos";
-import { pizzaValidationModel } from "../../application/validators/pizzaValidation";
-import type { PizzaSize } from "../../core/types/pizza.type";
+import { usePizzaEditLogic } from "../../application/hooks/usePizzaEditLogic";
+import { useIngredients } from "../../application/hooks/useIngredients";
 
-interface PriceFormValue {
-  size: PizzaSize;
-  originalPrice: number;
-  discountPrice: number;
-}
-
-interface PizzaFormValue {
-  name: string;
-  category: string;
-  description?: string;
-  rating?: number;
-  imageUrl?: string;
-  stock?: boolean;
-  top?: boolean;
-  size?: PizzaSize;
-  ingredients: string[];
-  prices: PriceFormValue[];
-}
-
-const defaultFormValue: PizzaFormValue = {
-  name: "",
-  category: "",
-  description: "",
-  imageUrl: "",
-  top: false,
-  rating: 0,
-  stock: true,
-  ingredients: [],
-  prices: [
-    { size: "Small", originalPrice: 0, discountPrice: 0 },
-    { size: "Medium", originalPrice: 0, discountPrice: 0 },
-    { size: "Large", originalPrice: 0, discountPrice: 0 },
-  ],
-};
-const categories = [
-  "Classic",
-  "Vegetarian",
-  "Spicy",
-  "Seafood",
-  "Premium",
-  "Special",
-].map((item) => ({ label: item, value: item }));
-
-export default function PizzaEdit(): JSX.Element {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+export default function PizzaEdit() {
+  const {
+    formRef,
+    formValue,
+    setFormValue,
+    handleSubmit,
+    updatePrice,
+    loading,
+    model,
+    categories,
+    handleIngredientsChange,
+  } = usePizzaEditLogic();
+  const { ingredients } = useIngredients();
   const { t } = useTranslation();
-  const toaster = useToaster();
-  const formRef = useRef<any>();
-  const [formValue, setFormValue] = useState<PizzaFormValue>(defaultFormValue);
-
-  const { pizza, getPizzaById, updateExistingPizza, loading } = usePizzas();
-
-  useEffect(() => {
-    if (id) {
-      getPizzaById(id);
-    }
-  }, [id, getPizzaById]);
-
-  useEffect(() => {
-    if (pizza) {
-      setFormValue({
-        ...pizza,
-        ingredients: pizza.ingredients?.map((i) => i.name) || [],
-        prices: pizza.prices || defaultFormValue.prices,
-      });
-    }
-  }, [pizza]);
-
-  console.log("prices in formValue:", formValue.prices);
-
-  const handleSubmit = async () => {
-    if (!formRef.current.check() || !id) return;
-
-    try {
-      const transformedData: UpdatePizzaDto = {
-        ...formValue,
-        ingredients: formValue.ingredients.map((name) => ({ name })),
-        // prices уже в нужном формате — массив объектов
-      };
-
-      await updateExistingPizza(id, transformedData);
-
-      toaster.push(
-        <Message type="success" closable>
-          Pizza updated successfully
-        </Message>
-      );
-      navigate("/pizzas");
-    } catch {
-      toaster.push(
-        <Message type="error" closable>
-          Failed to update pizza
-        </Message>
-      );
-    }
-  };
 
   return (
     <motion.div
@@ -127,9 +38,9 @@ export default function PizzaEdit(): JSX.Element {
     >
       <Panel
         header={
-          <h1 className="font-bold" style={{ fontWeight: "normal" }}>
+          <div className="font-bold text-3xl">
             {t("pizzas.edit")} - {formValue.name}
-          </h1>
+          </div>
         }
         bordered
         className="bg-white"
@@ -137,9 +48,8 @@ export default function PizzaEdit(): JSX.Element {
         <Form
           ref={formRef}
           onChange={setFormValue}
-          onSubmit={handleSubmit}
           formValue={formValue}
-          model={pizzaValidationModel}
+          model={model}
           fluid
         >
           <Stack spacing={24} direction="column">
@@ -148,7 +58,6 @@ export default function PizzaEdit(): JSX.Element {
                 <Form.Group controlId="name">
                   <Form.ControlLabel>{t("pizzas.name")}</Form.ControlLabel>
                   <Form.Control name="name" />
-                  <Form.HelpText>{t("pizzas.nameHelp")}</Form.HelpText>
                 </Form.Group>
 
                 <Form.Group controlId="category">
@@ -156,7 +65,10 @@ export default function PizzaEdit(): JSX.Element {
                   <Form.Control
                     name="category"
                     accepter={SelectPicker}
-                    data={categories}
+                    data={categories.map((c) => ({
+                      label: t(`pizzas.${c.name}`),
+                      value: c.name,
+                    }))}
                     block
                   />
                 </Form.Group>
@@ -164,7 +76,6 @@ export default function PizzaEdit(): JSX.Element {
                 <Form.Group controlId="imageUrl">
                   <Form.ControlLabel>{t("pizzas.imageUrl")}</Form.ControlLabel>
                   <Form.Control name="imageUrl" />
-                  <Form.HelpText>{t("pizzas.imageUrlHelp")}</Form.HelpText>
                 </Form.Group>
 
                 <Stack spacing={32} justifyContent="space-between">
@@ -196,17 +107,22 @@ export default function PizzaEdit(): JSX.Element {
             <Panel header={t("pizzas.ingredients")} bordered>
               <Form.Group controlId="ingredients">
                 <Form.ControlLabel>{t("pizzas.ingredients")}</Form.ControlLabel>
-                <Form.Control
-                  name="ingredients"
-                  accepter={TagInput}
-                  trigger={["Enter", "Comma", "Space"]}
-                  placeholder={t("pizzas.ingredientsPlaceholder")}
+                <CheckPicker
+                  data={ingredients.map(({ name }) => ({
+                    label: name,
+                    value: name,
+                  }))}
+                  value={formValue.ingredients || []}
+                  onChange={handleIngredientsChange}
+                  searchable
+                  cleanable
+                  style={{ width: 300 }}
+                  placeholder={t("pizzas.selectIngredients")}
                 />
-                <Form.HelpText>{t("pizzas.ingredientsHelp")}</Form.HelpText>
               </Form.Group>
             </Panel>
 
-            <Panel header={t("pizzas.prices")} bordered>
+            <Panel header={t("pizzas.pricing")} bordered>
               <Stack spacing={16} direction="column">
                 {formValue.prices.map((price, index) => (
                   <Panel key={price.size} bordered>
@@ -219,10 +135,14 @@ export default function PizzaEdit(): JSX.Element {
                           {t("pizzas.originalPrice")}
                         </Form.ControlLabel>
                         <Form.Control
-                          name={`prices[${index}].originalPrice`}
                           accepter={InputNumber}
                           min={0}
                           step={0.01}
+                          name={`prices[${index}].originalPrice`}
+                          value={price.originalPrice}
+                          onChange={(val) =>
+                            updatePrice(index, "originalPrice", val)
+                          }
                         />
                       </Form.Group>
 
@@ -231,10 +151,14 @@ export default function PizzaEdit(): JSX.Element {
                           {t("pizzas.discountPrice")}
                         </Form.ControlLabel>
                         <Form.Control
-                          name={`prices[${index}].discountPrice`}
                           accepter={InputNumber}
                           min={0}
                           step={0.01}
+                          name={`prices[${index}].discountPrice`}
+                          value={price.discountPrice}
+                          onChange={(val) =>
+                            updatePrice(index, "discountPrice", val)
+                          }
                         />
                       </Form.Group>
                     </Stack>
@@ -244,10 +168,15 @@ export default function PizzaEdit(): JSX.Element {
             </Panel>
 
             <ButtonToolbar>
-              <Button appearance="primary" type="submit" loading={loading}>
+              <Button
+                appearance="primary"
+                onClick={handleSubmit}
+                type="submit"
+                loading={loading}
+              >
                 {t("common.save")}
               </Button>
-              <Button appearance="subtle" onClick={() => navigate("/pizzas")}>
+              <Button appearance="subtle" onClick={() => history.back()}>
                 {t("common.cancel")}
               </Button>
             </ButtonToolbar>

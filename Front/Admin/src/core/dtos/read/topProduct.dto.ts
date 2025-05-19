@@ -1,7 +1,8 @@
 export interface TopProductDto {
-  id: string;
+  id: number;
   name: string;
-  sales: number;
+  quantitySold: number;
   revenue: number;
-  quantity: number;
+  imageUrl: string;
+  stock: number;
 }

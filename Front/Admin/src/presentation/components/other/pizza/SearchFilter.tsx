@@ -1,16 +1,12 @@
 import type { IPizzaSearchFilterProps } from "../../../../core/interfaces/props/pizzaSearchFilter.props";
 import { motion } from "framer-motion";
-import { Input, InputGroup, RadioTile, RadioTileGroup } from "rsuite";
-import SearchIcon from "@rsuite/icons/Search";
+import { RadioTile, RadioTileGroup } from "rsuite";
 import type { PizzaSize } from "../../../../core/types/pizza.type";
 import { sizeEmojis } from "../priceSell/constants";
 
 export default function PizzaSearchFilter({
-  searchTerm,
-  setSearchTerm,
   selectedSize,
   setSelectedSize,
-  searchPlaceholder,
   selectSizeLabel,
   t,
 }: IPizzaSearchFilterProps) {
@@ -22,18 +18,6 @@ export default function PizzaSearchFilter({
       className="mb-8 bg-white shadow-lg rounded-xl overflow-hidden border border-red-100"
     >
       <div className="p-6 space-y-6">
-        <InputGroup inside size="lg" className="w-full">
-          <InputGroup.Addon className="bg-red-50 text-red-500">
-            <SearchIcon />
-          </InputGroup.Addon>
-          <Input
-            placeholder={searchPlaceholder}
-            value={searchTerm}
-            onChange={setSearchTerm}
-            className="text-lg border-red-100 focus:border-red-300"
-          />
-        </InputGroup>
-
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-3">
             {selectSizeLabel}

@@ -4,5 +4,4 @@ export interface CreatePizzaPriceDto {
   size: PizzaSize;
   originalPrice: number;
   discountPrice: number;
-  pizzaId: string;
 }

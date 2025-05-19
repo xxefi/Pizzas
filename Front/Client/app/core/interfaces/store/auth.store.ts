@@ -2,7 +2,7 @@ import { IProfile } from "../data/profile.data";
 import { IUser } from "../data/user.data";
 
 export interface IAuthStore {
-  profile: IProfile;
+  profile: IProfile | null;
   isInitialized: boolean;
   isAuthenticated: boolean;
   loading: boolean;

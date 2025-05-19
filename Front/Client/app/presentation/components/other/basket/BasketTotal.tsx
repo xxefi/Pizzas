@@ -41,23 +41,25 @@ export const BasketTotal = ({
           {t("clearBasket")}
         </Button>
 
-        <Button
-          href="/checkout"
-          size="l"
-          stretched
-          mode="primary"
-          before={<Icon28ShoppingCartOutline />}
-          style={{
-            padding: "8px",
-            borderRadius: "12px",
-            fontWeight: 500,
-            color: "white",
-            background: "linear-gradient(to right, #6366f1, #8b5cf6)",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          {t("checkout")}
-        </Button>
+        <Link href="/checkout" passHref>
+          <Button
+            as="a"
+            size="l"
+            stretched
+            mode="primary"
+            before={<Icon28ShoppingCartOutline />}
+            style={{
+              padding: "8px",
+              borderRadius: "12px",
+              fontWeight: 500,
+              color: "white",
+              background: "linear-gradient(to right, #6366f1, #8b5cf6)",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            {t("checkout")}
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -3,7 +3,14 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["yastatic.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "blobcontainerefilopee.blob.core.windows.net",
+        pathname: "/efi/**",
+      },
+    ],
+    domains: ["blobcontainerefilopee.blob.core.windows.net", "yastatic.net"],
   },
 };
 

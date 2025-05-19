@@ -1,6 +1,5 @@
 import { getCurrencyFromStorage } from "@/app/application/hooks/useCurrency";
 import { CreateOrderDto } from "@/app/core/dtos/createOrder.dto";
-import { IOrder } from "@/app/core/interfaces/data/order.data";
 
 const { code: currency } = getCurrencyFromStorage();
 
@@ -34,20 +33,6 @@ export const orderRequests = {
           })),
         },
       },
-    },
-  ],
-
-  updateOrder: (orderId: string, order: IOrder) => [
-    {
-      action: "UpdateOrderCommand",
-      parameters: { orderId, order },
-    },
-  ],
-
-  deleteOrder: (orderId: string) => [
-    {
-      action: "DeleteOrderCommand",
-      parameters: { orderId },
     },
   ],
 };

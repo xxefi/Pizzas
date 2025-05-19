@@ -51,23 +51,7 @@ export default function Favorites() {
             t={t}
           />
 
-          {totalPages > 1 && (
-            <div className="mt-8 flex justify-center">
-              <Pagination
-                prev
-                next
-                first
-                last
-                ellipsis
-                boundaryLinks
-                maxButtons={5}
-                activePage={currentPage}
-                pages={totalPages}
-                onSelect={handlePageChange}
-                className="custom-pagination dark"
-              />
-            </div>
-          )}
+          {totalPages > 1 && <div className="mt-8 flex justify-center"></div>}
         </>
       )}
     </div>

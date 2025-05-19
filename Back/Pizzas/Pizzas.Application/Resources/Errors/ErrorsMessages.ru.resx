@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="BasketItemNotFound" xml:space="preserve">
+        <value>Элемент корзины не найден</value>
+    </data>
+    <data name="NoBasketItemsFound" xml:space="preserve">
+        <value>Элементы корзины не найдены</value>
+    </data>
+    <data name="BasketNotFound" xml:space="preserve">
+        <value>Корзина не найдена</value>
+    </data>
+    <data name="DeliveryInfoNotFound" xml:space="preserve">
+        <value>Информация о доставке не найдена</value>
+    </data>
+    <data name="NoDeliveryInfosFound" xml:space="preserve">
+        <value>Информация о доставках не найдена</value>
+    </data>
+    <data name="NoIngredientsFound" xml:space="preserve">
+        <value>Ингредиенты не найдены</value>
+    </data>
+    <data name="IngredientNotFound" xml:space="preserve">
+        <value>Ингредиент не найден</value>
+    </data>
+    <data name="OrderItemNotFound" xml:space="preserve">
+        <value>Позиция заказа не найдена</value>
+    </data>
+    <data name="NoOrderItemsFound" xml:space="preserve">
+        <value>Позиции заказа не найдены</value>
+    </data>
+    <data name="OrderNotFound" xml:space="preserve">
+        <value>Заказ не найден</value>
+    </data>
+    <data name="NoOrdersFound" xml:space="preserve">
+        <value>Заказы не найдены</value>
+    </data>
+    <data name="NoPermissionsFound" xml:space="preserve">
+        <value>Права не найдены</value>
+    </data>
+    <data name="PermissionNotFound" xml:space="preserve">
+        <value>Право не найдено</value>
+    </data>
+    <data name="PizzaIngredientNotFound" xml:space="preserve">
+        <value>Ингредиент пиццы не найден</value>
+    </data>
+    <data name="NoPizzaIngredientsFound" xml:space="preserve">
+        <value>Ингредиенты пиццы не найдены</value>
+    </data>
+    <data name="NoPizzasFound" xml:space="preserve">
+        <value>Пиццы не найдены</value>
+    </data>
+    <data name="PizzaNotFound" xml:space="preserve">
+        <value>Пицца не найдена</value>
+    </data>
+    <data name="ReviewNotFound" xml:space="preserve">
+        <value>Отзыв не найден</value>
+    </data>
+    <data name="NoReviewsFound" xml:space="preserve">
+        <value>Отзывы не найдены</value>
+    </data>
+    <data name="RoleNotFound" xml:space="preserve">
+        <value>Роль не найдена</value>
+    </data>
+    <data name="NoRolesFound" xml:space="preserve">
+        <value>Роли не найдены</value>
+    </data>
+    <data name="NoUsersFound" xml:space="preserve">
+        <value>Пользователи не найдены</value>
+    </data>
+    <data name="UserNotFound" xml:space="preserve">
+        <value>Пользователь не найден</value>
+    </data>
+    <data name="Unauthorized" xml:space="preserve">
+        <value>Пожалуйста, войдите в систему</value>
+    </data>
+    <data name="EmailAndPasswordCannotBeEmpty" xml:space="preserve">
+        <value>Email и пароль не могут бытьпустыми</value>
+    </data>
+    <data name="InvalidEmailFormat" xml:space="preserve">
+        <value>Неверный формат email</value>
+    </data>
+    <data name="InvalidEmailOrPassword" xml:space="preserve">
+        <value>Неверный email или пароль</value>
+    </data>
+    <data name="UserDoesNotExist" xml:space="preserve">
+        <value>Аккаунт не найден. Похоже, пора зарегистрироваться 😉</value>
+    </data>
+    <data name="StreetRequired" xml:space="preserve">
+  <value>Улица обязательна</value>
+</data>
+    <data name="StreetInvalid" xml:space="preserve">
+  <value>Неверный формат улицы</value>
+</data>
+    <data name="StreetMaxLength" xml:space="preserve">
+  <value>Улица не должна превышать {0} символов</value>
+</data>
+    <data name="CityRequired" xml:space="preserve">
+  <value>Город обязателен</value>
+</data>
+    <data name="CityInvalid" xml:space="preserve">
+  <value>Неверный формат города</value>
+</data>
+    <data name="CityMaxLength" xml:space="preserve">
+  <value>Город не должен превышать {0} символов</value>
+</data>
+    <data name="StateRequired" xml:space="preserve">
+  <value>Регион или область обязательны</value>
+</data>
+    <data name="StateInvalid" xml:space="preserve">
+  <value>Неверный формат региона или области</value>
+</data>
+    <data name="StateMaxLength" xml:space="preserve">
+  <value>Регион или область не должны превышать {0} символов</value>
+</data>
+    <data name="CountryRequired" xml:space="preserve">
+  <value>Страна обязательна</value>
+</data>
+    <data name="CountryInvalid" xml:space="preserve">
+  <value>Неверный формат страны</value>
+</data>
+    <data name="CountryMaxLength" xml:space="preserve">
+  <value>Страна не должна превышать {0} символов</value>
+</data>
+    <data name="PostalCodeRequired" xml:space="preserve">
+  <value>Почтовый индекс обязателен</value>
+</data>
+    <data name="PostalCodeInvalid" xml:space="preserve">
+  <value>Неверный формат почтового индекса</value>
+</data>
+    <data name="PostalCodeMaxLength" xml:space="preserve">
+  <value>Почтовый индекс не должен превышать {0} символов</value>
+</data>
+    <data name="UsernameRequired" xml:space="preserve">
+    <value>Имя пользователя обязательно</value>
+</data>
+    <data name="FirstNameRequired" xml:space="preserve">
+    <value>Имя обязательно</value>
+</data>
+    <data name="LastNameRequired" xml:space="preserve">
+    <value>Фамилия обязательна</value>
+</data>
+    <data name="EmailRequired" xml:space="preserve">
+    <value>Email обязателен</value>
+</data>
+    <data name="InvalidEmail" xml:space="preserve">
+    <value>Неверный формат email</value>
+</data>
+    <data name="PasswordRequired" xml:space="preserve">
+    <value>Пароль обязателен</value>
+</data>
+    <data name="InvalidPassword" xml:space="preserve">
+    <value>Пароль должен содержать не менее 8 символов, включая буквы и цифры</value>
+</data>
+    <data name="NotEnoughIngredientAvailable" xml:space="preserve">
+        <value>Недостаточно {0} в наличии</value>
+    </data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value>Неверный или просроченный OTP</value>
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value>Пользователь уже существует</value>
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value>Имя пользователя должно быть в нижнем регистре</value>
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value>Пожалуйста, подождите перед повторным запросом OTP</value>
+    </data>
+    <data name="CannotChangeStatusOfFinalizedOrder" xml:space="preserve">
+        <value>Нельзя изменить статус завершённого заказа</value>
+    </data>
+</root>

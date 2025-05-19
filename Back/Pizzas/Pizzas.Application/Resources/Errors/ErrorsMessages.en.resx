@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="BasketItemNotFound" xml:space="preserve">
+        <value>Basket Item Not Found</value>
+    </data>
+    <data name="NoBasketItemsFound" xml:space="preserve">
+        <value>No Basket Items Found</value>
+    </data>
+    <data name="BasketNotFound" xml:space="preserve">
+        <value>Basket Not Found</value>
+    </data>
+    <data name="DeliveryInfoNotFound" xml:space="preserve">
+        <value>Delivery Info Not Found</value>
+    </data>
+    <data name="NoDeliveryInfosFound" xml:space="preserve">
+        <value>No Delivery Infos Found</value>
+    </data>
+    <data name="NoIngredientsFound" xml:space="preserve">
+        <value>No ingredients found</value>
+    </data>
+    <data name="IngredientNotFound" xml:space="preserve">
+        <value>Ingredient not found</value>
+    </data>
+    <data name="OrderItemNotFound" xml:space="preserve">
+        <value>Order item not found</value>
+    </data>
+    <data name="NoOrderItemsFound" xml:space="preserve">
+        <value>No order items found</value>
+    </data>
+    <data name="OrderNotFound" xml:space="preserve">
+        <value>Order not found</value>
+    </data>
+    <data name="NoOrdersFound" xml:space="preserve">
+        <value>No orders found</value>
+    </data>
+    <data name="NoPermissionsFound" xml:space="preserve">
+        <value>No permissions found</value>
+    </data>
+    <data name="PermissionNotFound" xml:space="preserve">
+        <value>Permission not found</value>
+    </data>
+    <data name="PizzaIngredientNotFound" xml:space="preserve">
+        <value>Pizza ingredient not found</value>
+    </data>
+    <data name="NoPizzaIngredientsFound" xml:space="preserve">
+        <value>No pizza ingredients found</value>
+    </data>
+    <data name="NoPizzasFound" xml:space="preserve">
+        <value>No pizzas found</value>
+    </data>
+    <data name="PizzaNotFound" xml:space="preserve">
+        <value>Pizza not found</value>
+    </data>
+    <data name="ReviewNotFound" xml:space="preserve">
+        <value>Review not found</value>
+    </data>
+    <data name="NoReviewsFound" xml:space="preserve">
+        <value>No reviews found</value>
+    </data>
+    <data name="RoleNotFound" xml:space="preserve">
+        <value>Role not found</value>
+    </data>
+    <data name="NoRolesFound" xml:space="preserve">
+        <value>No roles found</value>
+    </data>
+    <data name="NoUsersFound" xml:space="preserve">
+        <value>No users found</value>
+    </data>
+    <data name="UserNotFound" xml:space="preserve">
+        <value>User not found</value>
+    </data>
+    <data name="Unauthorized" xml:space="preserve">
+        <value>Please log in to continue</value>
+    </data>
+    <data name="EmailAndPasswordCannotBeEmpty" xml:space="preserve">
+        <value>Email and password cannot beempty</value>
+    </data>
+    <data name="InvalidEmailFormat" xml:space="preserve">
+        <value>Invalid email format</value>
+    </data>
+    <data name="InvalidEmailOrPassword" xml:space="preserve">
+        <value>Invalid email or password</value>
+    </data>
+    <data name="UserDoesNotExist" xml:space="preserve">
+        <value>No such account found. Lookslike it’s time to sign up 😉</value>
+    </data>
+    <data name="UsernameRequired" xml:space="preserve">
+    <value>Username is required</value>
+</data>
+    <data name="FirstNameRequired" xml:space="preserve">
+    <value>First name is required</value>
+</data>
+    <data name="LastNameRequired" xml:space="preserve">
+    <value>Last name is required</value>
+</data>
+    <data name="EmailRequired" xml:space="preserve">
+    <value>Email is required</value>
+</data>
+    <data name="InvalidEmail" xml:space="preserve">
+    <value>Invalid email format</value>
+</data>
+    <data name="PasswordRequired" xml:space="preserve">
+    <value>Password is required</value>
+</data>
+    <data name="InvalidPassword" xml:space="preserve">
+    <value>Password must be at least 8 characters and include letters and numbers</value>
+</data>
+    <data name="StreetRequired" xml:space="preserve">
+  <value>Street is required</value>
+</data>
+    <data name="StreetInvalid" xml:space="preserve">
+  <value>Street format is invalid</value>
+</data>
+    <data name="StreetMaxLength" xml:space="preserve">
+  <value>Street must not exceed {0} characters</value>
+</data>
+    <data name="CityRequired" xml:space="preserve">
+  <value>City is required</value>
+</data>
+    <data name="CityInvalid" xml:space="preserve">
+  <value>City format is invalid</value>
+</data>
+    <data name="CityMaxLength" xml:space="preserve">
+  <value>City must not exceed {0} characters</value>
+</data>
+    <data name="StateRequired" xml:space="preserve">
+  <value>State is required</value>
+</data>
+    <data name="StateInvalid" xml:space="preserve">
+  <value>State format is invalid</value>
+</data>
+    <data name="StateMaxLength" xml:space="preserve">
+  <value>State must not exceed {0} characters</value>
+</data>
+    <data name="CountryRequired" xml:space="preserve">
+  <value>Country is required</value>
+</data>
+    <data name="CountryInvalid" xml:space="preserve">
+  <value>Country format is invalid</value>
+</data>
+    <data name="CountryMaxLength" xml:space="preserve">
+  <value>Country must not exceed {0} characters</value>
+</data>
+    <data name="PostalCodeRequired" xml:space="preserve">
+  <value>Postal code is required</value>
+</data>
+    <data name="PostalCodeInvalid" xml:space="preserve">
+  <value>Postal code format is invalid</value>
+</data>
+    <data name="PostalCodeMaxLength" xml:space="preserve">
+  <value>Postal code must not exceed {0} characters</value>
+</data>
+    <data name="InvalidOrExpiredOtp" xml:space="preserve">
+        <value>OTP is invalid or has expired</value>
+    </data>
+    <data name="UserAlreadyExists" xml:space="preserve">
+        <value>User already exists</value>
+    </data>
+    <data name="UsernameMustBeLowercase" xml:space="preserve">
+        <value>Username must contain only lowercase letters</value>
+    </data>
+    <data name="PleaseWaitBeforeRequesting" xml:space="preserve">
+        <value>Please wait before requestinga new OTP</value>
+    </data>
+    <data name="CannotChangeStatusOfFinalizedOrder" xml:space="preserve">
+        <value>Cannot change status of a finalized order</value>
+    </data>
+</root>

@@ -163,10 +163,7 @@ export const FlashDeals: FC = () => {
                       <Text className="text-sm text-gray-500 dark:text-gray-400">
                         Цена
                       </Text>
-                      <Text
-                        weight="semibold"
-                        className="text-2xl text-red-600 dark:text-red-400"
-                      >
+                      <Text className="text-2xl text-red-600 dark:text-red-400">
                         {deal.price}
                       </Text>
                     </div>

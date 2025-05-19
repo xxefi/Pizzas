@@ -1,9 +1,8 @@
-import type { IIngredients } from "./ingredients.data";
+import type { IIngredient } from "./ingredient.data";
 import type { IPrices } from "./prices.data";
 
 export interface IPizzas {
   id: string;
-  category: string;
   name: string;
   description: string;
   rating: number;
@@ -12,5 +11,5 @@ export interface IPizzas {
   top: boolean;
   size: string;
   prices: IPrices[];
-  ingredients: IIngredients[];
+  ingredients: IIngredient[];
 }

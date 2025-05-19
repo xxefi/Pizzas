@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
-import { Package, Clock, CreditCard, MapPin, ChevronRight } from "lucide-react";
+import { Package, Clock, CreditCard, ChevronRight } from "lucide-react";
 import { useOrders } from "@/app/application/hooks/useOrder";
 import { formatDate } from "@/app/presentation/utils/formatDate";
 import { PrivateRoute } from "@/app/presentation/components/widgets/PrivateRoute";
@@ -34,7 +34,7 @@ export default function Orders() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="px-3 py-1 rounded-full text-sm bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-                        {order.status}
+                        {t(order.status)}
                       </div>
                       <ChevronRight className="w-5 h-5 text-gray-500 group-hover:text-indigo-400 transition-colors" />
                     </div>
@@ -57,19 +57,7 @@ export default function Orders() {
                       <div className="flex items-center gap-2">
                         <CreditCard className="w-5 h-5 text-indigo-400" />
                         <span className="text-white font-medium">
-                          {order.totalAmount} {order.currency}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="text-sm text-gray-400">
-                        {t("deliveryAddress")}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-indigo-400" />
-                        <span className="text-white font-medium">
-                          {order.deliveryInfo.address}
+                          {order.totalAmount.toFixed(2)} {order.currency}
                         </span>
                       </div>
                     </div>
@@ -87,7 +75,7 @@ export default function Orders() {
                         >
                           <div className="relative w-16 h-16 rounded-lg overflow-hidden">
                             <img
-                              src={item.pizza.imageUrl}
+                              src={item.pizza?.imageUrl}
                               alt={item.pizza.name}
                               className="object-cover w-full h-full"
                             />
