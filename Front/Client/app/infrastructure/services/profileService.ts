@@ -19,51 +19,5 @@ export const profileService = {
       return {} as IProfile;
     }
   },
-  /*
-  getProfile: async (): Promise<IProfile> => {
-    const { userId, setUserId } = userStore.getState();
-    let id = userId;
-
-    if (!id) {
-      const token = Cookies.get("atk");
-
-      if (token) {
-        id = getUserIdFromToken(token);
-        setUserId(id);
-        console.log(id);
-      }
-    }
-
-    try {
-      const response = await httpClient.get(`/api/Users/id/${id}`);
-      return response.data.data;
-    } catch (error) {
-      console.error("Error fetching profile:", error);
-      throw error;
-    }
-  },
-
-  updateProfile: async (data: Partial<IProfile>): Promise<IProfile> => {
-    const { userId } = userStore.getState();
-    let id = userId;
-
-    if (!id) {
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("atk="))
-        ?.split("=")[1];
-
-      if (token) {
-        id = getUserIdFromToken(token);
-      }
-    }
-
-    try {
-      const response = await httpClient.put(`/api/Users/update/id/${id}`, data);
-      return response.data.data;
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      throw error;
-    }
-  },*/
+  
 };
