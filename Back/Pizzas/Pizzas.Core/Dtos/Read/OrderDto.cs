@@ -13,8 +13,8 @@ public class OrderDto
     public string Currency { get; set; } = string.Empty;
     public decimal SubTotal { get; set; }
     public decimal TotalAmount { get; set; }
-    public DeliveryInfoDto DeliveryInfo { get; set; } = new DeliveryInfoDto();
-    public ICollection<OrderItemDto> Items { get; set; } = new List<OrderItemDto>();
+    public DeliveryInfoDto DeliveryInfo { get; set; } = new();
+    public ICollection<OrderItemDto> Items { get; set; } = [];
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 }
