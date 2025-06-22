@@ -1,0 +1,288 @@
+{
+  "loading": "Yüklənir...",
+  "Home": {
+    "welcome": "Xoş gəlmisiniz!",
+    "description": "İndi ən yaxşı pizzaları kəşf edin.",
+    "goToMenu": "Menyuya keç"
+  },
+  "Benefits": {
+    "fastDelivery": {
+      "title": "Sürətli çatdırılma",
+      "description": "30 dəqiqəyə çatdırılma, ya da pizza pulsuz"
+    },
+    "freshIngredients": {
+      "title": "Təzə inqrediyentlər",
+      "description": "Yalnız keyfiyyətli məhsullardan istifadə edirik"
+    },
+    "open247": {
+      "title": "24/7 açığıq",
+      "description": "İstədiyiniz vaxt sifariş verin"
+    }
+  },
+
+  "Review": {
+    "notAuthorized": "Siz sistemə daxil olmamısınız",
+    "rating": "Qiymət",
+    "reviews": "Rəylər",
+    "noReviews": "Rəy yoxdur",
+    "typeReview": "Rəy yazın...",
+    "rateThisBook": "Kitabı qiymətləndirin",
+    "addReview": "Rəyi əlavə et",
+    "reviewAdded": "Rəy əlavə olundu",
+    "cancel": "Ləğv et",
+    "save": "Saxla",
+    "reviewUpdated": "Rəy yeniləndi",
+    "reviewDeleted": "Rəy silindi",
+    "shareYourThoughts": "Bu pizza haqqında fikirlərinizi bölüşün",
+    "submitReview": "Rəy göndərin"
+  },
+  "Pizza": {
+    "notFound": "Bu kateqoriyada heç bir pizza tapılmadı",
+    "description": "Təsvir",
+    "ingredients": "Tərkib hissələri",
+    "prices": "Qiymətlər",
+    "small": "Kiçik",
+    "medium": "Orta",
+    "large": "Böyük",
+    "checkThisPizza": "Bu pizzaya baxın",
+    "pizzaName": "Pizza adı",
+    "price": "Qiymət",
+    "goToPizzaFromLink": "Pizzaya keçid etmək üçün bu linkə klikləyin",
+    "linkCopied": "Link kopyalandı",
+    "addToBasket": "Səbətə əlavə et",
+    "addToFavorite": "Seçilmişlərə əlavə et",
+    "alreadyInFavorite": "Seçilmişlərdən sil",
+    "alreadyInBasket": "Artıq səbətdədir",
+    "chooseSize": "Ölçü seçin"
+  },
+  "Category": {
+    "Classic": "Klassik",
+    "Meat": "Ətli",
+    "Vegetarian": "Vegetarian",
+    "Seafood": "Dəniz məhsulları",
+    "Spicy": "Acılı",
+    "notFound": "Bu kateqoriyada heç bir pizza tapılmadı"
+  },
+  "Carousel": {
+    "freshPizza": {
+      "title": "Təzə Pizza",
+      "description": "Ən yaxşı inqrediyentlərlə hazırlanır",
+      "buttonText": "İndi sifariş et"
+    },
+    "specialOffers": {
+      "title": "Xüsusi Təkliflər",
+      "description": "Menyuda 30%-ə qədər endirim",
+      "buttonText": "Ətraflı bax"
+    },
+    "fastDelivery": {
+      "title": "Sürətli Çatdırılma",
+      "description": "30 dəqiqəyə çatdırılma, ya pizza pulsuzdur",
+      "buttonText": "Çatdırılma sifariş et"
+    }
+  },
+  "Search": {
+    "title": "Sevdiyiniz pizzanı tapın",
+    "subtitle": "Axtardığınız dad burada ola bilər!",
+    "searchPlaceholder": "Pizzanı axtarın...",
+    "searchButton": "Axtar",
+    "suggestions": "Təklif olunan nəticələr göstərilir",
+    "loadingResults": "Nəticələr yüklənir...",
+    "noResults": "Heç bir nəticə tapılmadı",
+    "topRated": "Ən yaxşı qiymətləndirilən",
+    "ingredients": "İçindəkilər",
+    "size": "-ci ölçü",
+    "addToCart": "Səbətə əlavə et",
+    "outOfStock": "Stokda yoxdur",
+    "large": "Böyük",
+    "medium": "Orta",
+    "small": "Kiçik"
+  },
+  "Basket": {
+    "yourBasket": "Səbətiniz",
+    "emptyBasket": "Səbətiniz boşdur",
+    "clearBasket": "Səbəti təmizlə",
+    "orderSummary": "Sifariş Xülasəsi",
+    "subtotal": "Ara Cəm",
+    "shipping": "Çatdırılma",
+    "free": "Pulsuz",
+    "total": "Cəmi",
+    "checkout": "Sifarişi Tamamla",
+    "addItemsToBasket": "Sifariş vermək üçün səbətə məhsul əlavə edin",
+    "goToCatalog": "Kataloqa keçin",
+    "freeShippingMessage": "50 AZN-dən yuxarı sifarişlərdə pulsuz çatdırılma",
+    "securePayment": "Təhlükəsiz ödəniş",
+    "pricePerItem": "ədəd",
+    "includingVAT": "ƏDV daxil",
+    "checkoutAgreement": "'Sifarişi tamamla' düyməsini vurmaqla şərtlərlə razılaşırsınız",
+    "fastDelivery": "Sürətli Çatdırılma",
+    "deliveryTime": "1-2 iş günü",
+    "basketCleaned": "Səbət təmizləndi"
+  },
+  "Contacts": {
+    "title": "Bizimlə əlaqə",
+    "description": "Sizdən eşitməyə şadamıq. Aşağıdakı əlaqə məlumatlarından istifadə edərək və ya formanı dolduraraq bizimlə əlaqə saxlayın.",
+    "address": "Ünvan",
+    "addressContent": "Pizza küç. 123, Yemək şəhəri, GY 12345",
+    "phone": "Telefon",
+    "phoneContent": "+1 (555) 123-4567",
+    "email": "Email",
+    "emailContent": "contact@pizzashop.com",
+    "workingHours": "İş saatları",
+    "workingHoursContent": "B.E: 10:00 - 22:00",
+    "contactForm": "Mesaj göndər",
+    "name": "Adınız",
+    "namePlaceholder": "Adınızı daxil edin",
+    "emailPlaceholder": "Email ünvanınızı daxil edin",
+    "message": "Mesaj",
+    "messagePlaceholder": "Mesajınızı daxil edin...",
+    "sendMessage": "Göndər"
+  },
+  "Menu": {
+    "menu": "Menyu"
+  },
+  "Navbar": {
+    "home": "Ana səhifə",
+    "menu": "Menyu",
+    "contacts": "Əlaqə",
+    "login": "Daxil ol",
+    "register": "Qeydiyyat",
+    "profile": "Profilim",
+    "logout": "Çıxış et",
+    "basket": "Səbətim",
+    "favorites": "Seçilmişlər",
+    "addresses": "Ünvanlarım",
+    "orders": "Sifarişlərim",
+    "notAuthorized": "Siz sistemə daxil olmamısınız"
+  },
+  "Addresses": {
+    "myAddresses": "Ünvanlarım",
+    "addNewAddress": "Yeni ünvan əlavə et",
+    "defaultAddress": "Əsas ünvan",
+    "edit": "Redaktə et",
+    "makeDefault": "Əsas et",
+    "delete": "Sil",
+    "editAddress": "Ünvanı redaktə et",
+    "addAddress": "Yeni ünvan əlavə et",
+    "street": "Küçə",
+    "city": "Şəhər",
+    "state": "Rayon/Region",
+    "country": "Ölkə",
+    "postalCode": "Poçt indeksi",
+    "cancel": "Ləğv et",
+    "save": "Yadda saxla",
+    "add": "Əlavə et",
+    "addressesNotFound": "Hal-hazırda yadda saxlanılmış ünvanlarınız yoxdur"
+  },
+  "Checkout": {
+    "checkout": "Sifariş Verilməsi",
+    "deliveryAddress": "Çatdırılma Ünvanı",
+    "paymentMethod": "Ödəniş Metodu",
+    "creditCard": "Kredit Kartı",
+    "creditCardDesc": "Onlayn Ödəniş",
+    "cashOnDelivery": "Nağd Ödəniş",
+    "cashOnDeliveryDesc": "Kuryerə Ödəniş",
+    "orderSummary": "Sifariş Xülasəsi",
+    "subtotal": "Ara Cəm",
+    "delivery": "Çatdırılma",
+    "total": "Cəm",
+    "placeOrder": "Sifariş Et",
+    "orderCreated": "Sifariş uğurla yarandı"
+  },
+  "Orders": {
+    "myOrders": "Mənim Sifarişlərim",
+    "orderNumber": "Sifariş Nömrəsi",
+    "totalAmount": "Cəm Məbləğ",
+    "deliveryAddress": "Çatdırılma Ünvanı",
+    "items": "Məhsullar",
+    "Pending": "Gözləmədə",
+    "InProgress": "İcra olunur",
+    "Completed": "Tamamlandı",
+    "Canceled": "Ləğv edildi"
+  },
+  "Favorites": {
+    "title": "Sevimlilərim",
+    "subtitle": "Sevdiyiniz pizzalar bir yerdə",
+    "emptyTitle": "Hələ sevimli pizzanız yoxdur",
+    "emptySubtitle": "Sevimli pizzaları bura əlavə edin",
+    "addToCart": "Səbətə əlavə et",
+    "removedFromFavorites": "Sevimlilərdən silindi",
+    "errorRemoving": "Sevimlilərdən silinərkən xəta baş verdi",
+    "addedToCart": "Səbətə əlavə olundu",
+    "large": "Böyük",
+    "medium": "Orta",
+    "small": "Kiçik"
+  },
+  "Login": {
+    "Title": "Xoş gəlmisiniz!",
+    "Subtitle": "Hesabınıza daxil olmaq üçün məlumatları daxil edin",
+    "Email": "Email",
+    "EmailPlaceholder": "example@mail.com",
+    "Password": "Şifrə",
+    "PasswordPlaceholder": "••••••••",
+    "ForgotPassword": "Şifrəni unutmusunuz?",
+    "Login": "Daxil olun",
+    "NoAccount": "Hesabınız yoxdur?",
+    "Register": "Qeydiyyatdan keçin",
+    "Success": "Siz sistemə daxil oldunuz",
+    "LogoutSuccess": "Siz sistemnən çıxdınız"
+  },
+  "OTP": {
+    "otpVerifedSuccess": "OTP uğurla təsdiqləndi",
+    "invalidOtp": "OTP kodu yanlışdır",
+    "otpResendSuccessfully": "OTP yenidən göndərildi",
+    "failedToResend": "OTP yenidən göndərilə bilmədi"
+  },
+  "Register": {
+    "Title": "Qeydiyyat",
+    "Subtitle": "İşə başlamaq üçün hesab yaradın",
+    "Username": "İstifadəçi adı",
+    "UsernamePlaceholder": "İstifadəçi adınızı daxil edin",
+    "FirstName": "Ad",
+    "FirstNamePlaceholder": "Adınızı daxil edin",
+    "LastName": "Soyad",
+    "LastNamePlaceholder": "Soyadınızı daxil edin",
+    "Email": "Elektron poçt",
+    "EmailPlaceholder": "Poçt ünvanınızı daxil edin",
+    "Password": "Şifrə",
+    "ConfirmPassword": "Şifrəni təkrarlayın",
+    "PasswordMismatch": "Şifrələr uyğun gəlmir",
+    "AgreeTo": "Xidmət şərtlərini qəbul edirəm",
+    "Terms": "İstifadə şərtləri",
+    "And": "və",
+    "Privacy": "Məxfilik siyasəti",
+    "Register": "Qeydiyyatdan keçmək",
+    "HaveAccount": "Hesabınız varmı?",
+    "Login": "Daxil ol",
+    "Success": "Qeydiyyat uğurla tamamlandı",
+    "OTPCode": "Təsdiq kodu",
+    "OTPPlaceholder": "Kodu daxil edin",
+    "EnterOTPMessage": "E-poçt ünvanınıza göndərilən kodu daxil edin",
+    "VerifyOTP": "Kodu təsdiqlə",
+    "NotReceivedCode": "Kod almadınız?",
+    "ResendCode": "Kodu yenidən göndər",
+    "ResendCodeTimer": "{seconds} saniyə sonra yenidən göndərilə bilər",
+    "Validation": {
+      "UsernameRequired": "İstifadəçi adı tələb olunur",
+      "FirstNameRequired": "Ad tələb olunur",
+      "LastNameRequired": "Soyad tələb olunur",
+      "EmailRequired": "Email tələb olunur",
+      "InvalidEmail": "Düzgün email ünvanı daxil edin",
+      "PasswordRequired": "Şifrə tələb olunur",
+      "PasswordTooShort": "Şifrə ən azı 8 simvoldan ibarət olmalıdır",
+      "ConfirmPasswordRequired": "Zəhmət olmasa, şifrəni təsdiqləyin",
+      "PasswordMismatch": "Şifrələr uyğun gəlmir",
+      "TermsRequired": "Şərtləri qəbul etməlisiniz"
+    }
+  },
+  "Profile": {
+    "ProfileInformation": "Profil məlumatları",
+    "Username": "İstifadəçi adı",
+    "Email": "E-poçt",
+    "AccountStatus": "Hesabın vəziyyəti",
+    "LastUpdated": "Sonuncu yeniləmə",
+    "EditProfile": "Profili redaktə et",
+    "DeleteAccount": "Hesabı sil",
+    "Active": "Aktiv",
+    "Unknown": "Naməlum"
+  }
+}

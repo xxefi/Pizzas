@@ -1,0 +1,12 @@
+node_modules/
+obj/
+bin/
+.vs/
+.idea/
+.next/
+<<<<<<< HEAD
+=======
+appsettings.json
+appsettings.Development.json
+>>>>>>> fd1c5203b4f8221e786e31370461487c4c1a2464
+POS-план.txt
